@@ -4,39 +4,193 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/ThirdPartyCss/css")
+    @Styles.Render("~/Content/ThirdPartyCss/bootstrap-responsive")
+    @Styles.Render("~/Content/ThirdPartyCss/animate")
+    @Styles.Render("~/Content/ThirdPartyCss/font-awesome")
+    @Styles.Render("~/Content/ThirdPartyCss/cslider")
+    @Styles.Render("~/Content/ThirdPartyCss/camera")
+    @Styles.Render("~/Content/ThirdPartyCss/flexslider")
+    @Styles.Render("~/Content/ThirdPartyCss/bxslider")
+    @Styles.Render("~/Content/ThirdPartyCss/overwrite")
+    @Styles.Render("~/Content/ThirdPartyCss/prettyPhoto")
+    @Styles.Render("~/Content/ThirdPartyCss/shortcodes")
+    @Styles.Render("~/Content/ThirdPartyCss/slick")
+    @Styles.Render("~/Content/ThirdPartyCss/slick-theme")
+    @Styles.Render("~/Content/ThirdPartyCss/defaultColor")
+    @Styles.Render("~/Content/CustomCss/style")
+
+    @Scripts.Render("~/bundles/ThirdPartyJs/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
+        </div>*@
+    <div id="wrapper">
+        <!-- start header -->
+        <header>
+            <div class="top">
+                <div class="container">
+                    <div class="row">
+                        <div class="span6">
+                            <p class="topcontact"><i class="icon-phone"></i> 01991-744959</p>
+                        </div>
+                        <div class="span6">
+
+                            <ul class="social-network">
+                                <li>
+                                    <a href="#" data-placement="bottom" title="Facebook"><i class="icon-facebook icon-white"></i></a>
+                                </li>
+                                <li><a href="#" data-placement="bottom" title="Twitter"><i class="icon-twitter icon-white"></i></a></li>
+                                <li>
+                                    <a href="#" data-placement="bottom" title="Linkedin"><i class="icon-linkedin icon-white"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" data-placement="bottom" title="Google +"><i class="icon-google-plus icon-white"></i></a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="container body-content">
+            <div class="container">
+                <div class="row nomargin">
+                    <div class="span4">
+                        <div class="logo">
+                            <a href="index.html"><img src="img/logo.png" alt="" /></a>
+                        </div>
+                    </div>
+                    <div class="span8">
+                        <div class="navbar navbar-static-top">
+                            <div class="navigation">
+                                <nav>
+                                    <ul class="nav topnav">
+                                        <li class="active">
+                                            <a href="index.html"> Home </a>
+                                        </li>
+                                        <li><a href="about.html">About us</a></li>
+                                        <li><a href="services.html">Service</a></li>
+                                        <li><a href="gallery.html">Gallery</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- end navigation -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- end header -->
+
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <div class="container">
+                <div class="row">
+                    <div class="span4">
+                        <div class="widget">
+                            <h5 class="widgetheading">Browse pages</h5>
+                            <ul class="link-list">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="services.html">Service</a></li>
+                                <li><a href="gallery.html">Gallery</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <div class="widget">
+                            <h5 class="widgetheading">Get in touch</h5>
+                            <address>
+                                <strong>Trade World Advertising</strong><br>
+                                Hasan Villa, House No # 121, Ward # 06
+                                Azampur Kachabazar, Mukti Joddha Road
+                                Dokkinkhan, Uttara, Dhaka-1230, Bangladesh
+                            </address>
+                            <p>
+                                <i class="icon-phone"></i> 01991-744959<br>
+                                <i class="icon-envelope-alt"></i> tradeworld17@yahoo.com<br>
+                                <i class="icon-envelope-alt"></i> tradeworld17@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <ul class="social-network-footer">
+                            <li>
+                                <a href="#" data-placement="bottom" title="Facebook"><i class="icon-facebook icon-white"></i></a>
+                            </li>
+                            <li><a href="#" data-placement="bottom" title="Twitter"><i class="icon-twitter icon-white"></i></a></li>
+                            <li>
+                                <a href="#" data-placement="bottom" title="Linkedin"><i class="icon-linkedin icon-white"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" data-placement="bottom" title="Google +"><i class="icon-google-plus icon-white"></i></a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div id="sub-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="span6">
+                            <div class="copyright">
+                                <p><span>&copy; Trade World Advertising. All right reserved</span></p>
+                            </div>
+                        </div>
+                        <div class="span6">
+                            <div class="credits">
+                                Designed and Developed by <a href="http://byteheart.com/" target="_blank">ByteHeart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </footer>
+        <a href="#" class="scrollup"><i class="icon-angle-up icon-square icon-bglight icon-2x active"></i></a>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/ThirdPartyJs/jquery")
+    @Scripts.Render("~/bundles/ThirdPartyJs/jqueryval")
+    @Scripts.Render("~/bundles/ThirdPartyJs/jqueryvalUnobtrusive")
+    @Scripts.Render("~/bundles/ThirdPartyJs/bootstrap")
+    @Scripts.Render("~/bundles/ThirdPartyJs/animate")
+    @Scripts.Render("~/bundles/ThirdPartyJs/inview")
+    @Scripts.Render("~/bundles/ThirdPartyJs/bxslider")
+    @Scripts.Render("~/bundles/ThirdPartyJs/cslider")
+    @Scripts.Render("~/bundles/ThirdPartyJs/easing")
+    @Scripts.Render("~/bundles/ThirdPartyJs/flexslider")
+    @Scripts.Render("~/bundles/ThirdPartyJs/prettyPhoto")
+    @Scripts.Render("~/bundles/ThirdPartyJs/slick")
+    @Scripts.Render("~/bundles/ThirdPartyJs/toucheffects")
+    @Scripts.Render("~/bundles/ThirdPartyJs/camera")
+    @Scripts.Render("~/bundles/ThirdPartyJs/camera-setting")
+    @Scripts.Render("~/bundles/ThirdPartyJs/google-code-prettify")
+    @Scripts.Render("~/bundles/ThirdPartyJs/portfolio")
+    @Scripts.Render("~/bundles/ThirdPartyJs/portfolio-setting")
+    @Scripts.Render("~/bundles/CustomJs/customJs")
     @RenderSection("scripts", required: false)
 </body>
 </html>
