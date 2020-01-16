@@ -140,6 +140,8 @@
     <Content Include="Content\fonts\nunito\nunito-regular.svg" />
     <Content Include="Content\fonts\nunito\nunito-regulard41d.html" />
     <Content Include="Content\fonts\nunito\nunito-semibold.svg" />
+    <Content Include="Content\img\banner\1.png" />
+    <Content Include="Content\img\banner\2.png" />
     <Content Include="Content\VendorCss\animate.min.css" />
     <Content Include="Content\VendorCss\bootstrap-theme.css" />
     <Content Include="Content\VendorCss\bootstrap-theme.min.css" />
@@ -253,6 +255,7 @@
     <Content Include="Views\Feedback\Index.cshtml" />
     <Content Include="Views\Home\Banner.cshtml" />
     <Content Include="Views\Auth\Login.cshtml" />
+    <Content Include="Views\Home\InsertBanner.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

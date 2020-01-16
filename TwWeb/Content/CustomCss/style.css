@@ -196,11 +196,11 @@ header {
   box-shadow: 0 2px 4px -2px #ddd;
 }
 
-header .top {
-  padding: 10px 0 10px;
-  margin: 0 0 30px;
-  background: #545454;
-}
+    header .top {
+        padding: 10px 0 10px;
+        margin: 0 0 30px;
+        background: #2d313d;
+    }
 
 header .top p.topcontact {
   color: #ddd;
@@ -544,7 +544,8 @@ select.selectmenu {
 
 #gallery-content img {
   width: 100%;
-  height: 250px;
+  height: auto;
+ 
 }
 
 /* --- Call to action --- */
@@ -656,9 +657,9 @@ select.selectmenu {
 ===================================== */
 
 #works {
-  background: #fcfcfc;
-  padding: 50px 0 30px;
-  border-bottom: 1px solid #222222;
+    background: #fcfcfc;
+    padding: 50px 0 30px;
+    border-bottom: 1px solid #2d313d;
 }
 
 /* home works */
@@ -671,7 +672,7 @@ select.selectmenu {
 }
 
 .grid .item {
-  margin: 0;
+  margin: 0 0 30px;
   text-align: left;
   position: relative;
   padding: 0;
@@ -988,14 +989,14 @@ select.selectmenu {
 ==================================== */
 
 #inner-headline {
-  background: #fcfcfc;
-  position: relative;
-  margin: 0;
-  padding: 20px 0 10px;
+    background: #2d313d;
+    position: relative;
+    margin: 0;
+    padding: 20px 0 10px;
 }
 
 #inner-headline .inner-heading h2 {
-  color: #333;
+  color: #fff;
   margin: 0 0 0 0;
   font-size: 32px;
   font-weight: 700;
@@ -1008,6 +1009,7 @@ select.selectmenu {
   margin: 0;
   float: none;
   background: none;
+  font-weight: 600;
 }
 
 #inner-headline ul.breadcrumb li {
@@ -1017,7 +1019,7 @@ select.selectmenu {
 
 #inner-headline ul.breadcrumb li {
   font-size: 13px;
-  color: #888;
+  color: #fff;
   text-shadow: none;
 }
 
@@ -2977,7 +2979,7 @@ div.pp_default .pp_description {
 }
 
 .alt-bg {
-  background: #222222 !important;
+    background: #2d313d !important;
 }
 
 #slider {
@@ -2996,4 +2998,29 @@ div.pp_default .pp_description {
 
 .carousel img {
   padding: 0 20px;
+}
+
+.box-project a:hover {
+    background: #0e0f0f;
+}
+
+#project-details {
+    position: relative;
+    background: #fff;
+    border-top: 1px solid #f2f2f2;
+    padding: 50px 0 0 0;
+}
+    #project-details .box-project {
+        margin-bottom: 30px;
+    }
+#works .service-box {
+    margin-bottom: 30px;
+}
+.alt-bg-gray {
+    background: #ecebeb !important;
+    color: #0e0f0f;
+}
+.mb30
+{
+    margin-bottom: 30px !important;
 }

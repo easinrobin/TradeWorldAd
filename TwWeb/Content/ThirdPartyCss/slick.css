@@ -77,9 +77,8 @@
 .slick-slide
 {
     display: none;
-    float: left;
-
-    height: 100%;
+    float: left;   
+    height: 260px;
     min-height: 1px;
 }
 [dir='rtl'] .slick-slide
@@ -116,4 +115,29 @@
 }
 .slick-arrow.slick-hidden {
     display: none;
+}
+.slick-slide img {
+    width: 300px;
+}
+
+@media only screen and (max-width: 812px)  {
+    .slick-slide img {
+        width: 220px;
+        margin-right: 5px;
+    }
+    .slick-slide {
+        height: auto;
+    }
+}
+    
+  
+    
+@media only screen and (max-width: 991px) {
+    .slick-slide img {
+        width: 125px;
+        margin-right: 5px;
+    }
+    .slick-slide {
+        height: auto;
+    }
 }
