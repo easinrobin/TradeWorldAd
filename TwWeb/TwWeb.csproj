@@ -213,6 +213,20 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TW.BusinessLayer\TW.BusinessLayer.csproj">
+      <Project>{b8feb4f5-5e30-4d53-bf46-443f1fc37ff2}</Project>
+      <Name>TW.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TW.Models\TW.Models.csproj">
+      <Project>{2a8206a8-a649-4b4f-92b8-c08982111f12}</Project>
+      <Name>TW.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TW.Utility\TW.Utility.csproj">
+      <Project>{d0c34667-bbbe-43af-8788-a394904981e2}</Project>
+      <Name>TW.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -20,9 +20,9 @@ namespace TwAdmin.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Banner()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your application description page.";
 
             return View();
         }
