@@ -7,8 +7,8 @@ using System.Reflection;
 using System.Text;
 using System.Web.UI.WebControls;
 
-namespace ShareSpace.Utility
-{
+namespace TW.Utility
+{ 
     public class UtilityManager
     {
         private static Random random = new Random();
