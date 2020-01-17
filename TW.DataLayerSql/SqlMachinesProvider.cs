@@ -1,55 +1,31 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using TW.Models;
 using TW.Utility;
 
 namespace TW.DataLayerSql
 {
-    public class SqlHomeProvider
+    public class SqlMachinesProvider
     {
-        public Banner GetBannerDetails(long bannerId)
+        public List<OurMachine> GetAllMachines()
         {
             using (SqlConnection connection = new SqlConnection(CommonUtility.ConnectionString))
             {
-                SqlCommand command = new SqlCommand(StoreProcedure.GetBannerById, connection);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add(new SqlParameter("@Id", bannerId));
-
-                try
-                {
-                    connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-                    Banner banner = new Banner();
-                    banner = UtilityManager.DataReaderMap<Banner>(reader);
-                    return banner;
-                }
-                catch (Exception e)
-                {
-                    throw new Exception("Exception retrieving reviews. " + e.Message);
-                }
-                finally
-                {
-                    connection.Close();
-                }
-            }
-        }
-
-        public List<Banner> GetAllBanners()
-        {
-            using (SqlConnection connection = new SqlConnection(CommonUtility.ConnectionString))
-            {
-                SqlCommand command = new SqlCommand(StoreProcedure.GetAllBanners, connection);
+                SqlCommand command = new SqlCommand(StoreProcedure.GetAllMachines, connection);
                 command.CommandType = CommandType.StoredProcedure;
 
                 try
                 {
                     connection.Open();
                     SqlDataReader dataReader = command.ExecuteReader();
-                    List<Banner> bannerList = new List<Banner>();
-                    bannerList = UtilityManager.DataReaderMapToList<Banner>(dataReader);
-                    return bannerList;
+                    List<OurMachine> machineList = new List<OurMachine>();
+                    machineList = UtilityManager.DataReaderMapToList<OurMachine>(dataReader);
+                    return machineList;
                 }
                 catch (Exception e)
                 {
@@ -63,11 +39,11 @@ namespace TW.DataLayerSql
             }
         }
 
-        public AboutUs GetAboutUs(long Id)
+        public OurMachine GetMachineById(long Id)
         {
             using (SqlConnection connection = new SqlConnection(CommonUtility.ConnectionString))
             {
-                SqlCommand command = new SqlCommand(StoreProcedure.GetAboutDetails, connection);
+                SqlCommand command = new SqlCommand(StoreProcedure.GetMachineById, connection);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add(new SqlParameter("@Id", Id));
 
@@ -75,9 +51,9 @@ namespace TW.DataLayerSql
                 {
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
-                    AboutUs aboutUs = new AboutUs();
-                    aboutUs = UtilityManager.DataReaderMap<AboutUs>(reader);
-                    return aboutUs;
+                    OurMachine machine = new OurMachine();
+                    machine = UtilityManager.DataReaderMap<OurMachine>(reader);
+                    return machine;
                 }
                 catch (Exception e)
                 {
@@ -90,22 +66,22 @@ namespace TW.DataLayerSql
             }
         }
 
-        public long InsertBanner(Banner banner)
+        public long InsertMachine(OurMachine machines)
         {
             long id = 0;
             using (SqlConnection connection = new SqlConnection(CommonUtility.ConnectionString))
             {
-                SqlCommand command = new SqlCommand(StoreProcedure.InsertBanner, connection);
+                SqlCommand command = new SqlCommand(StoreProcedure.InsertMachine, connection);
                 command.CommandType = CommandType.StoredProcedure;
                 SqlParameter returnValue = new SqlParameter("@" + "Id", SqlDbType.Int);
                 returnValue.Direction = ParameterDirection.Output;
                 command.Parameters.Add(returnValue);
-                foreach (var banners in banner.GetType().GetProperties())
+                foreach (var machine in machines.GetType().GetProperties())
                 {
-                    if (banners.Name != "Id")
+                    if (machine.Name != "Id")
                     {
-                        string name = banners.Name;
-                        var value = banners.GetValue(banner, null);
+                        string name = machine.Name;
+                        var value = machine.GetValue(machines, null);
 
                         command.Parameters.Add(new SqlParameter("@" + name, value == null ? DBNull.Value : value));
                     }
@@ -118,7 +94,7 @@ namespace TW.DataLayerSql
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Exception Adding Data. " + ex.Message);
+                    throw new Exception("Execption Adding Data. " + ex.Message);
                 }
                 finally
                 {
@@ -128,19 +104,19 @@ namespace TW.DataLayerSql
             return id;
         }
 
-        public bool UpdateBanner(Banner banner)
+        public bool UpdateMachine(OurMachine machines)
         {
             bool isUpdate = true;
 
             using (SqlConnection connection = new SqlConnection(CommonUtility.ConnectionString))
             {
-                SqlCommand command = new SqlCommand(StoreProcedure.UpdateBanner, connection);
+                SqlCommand command = new SqlCommand(StoreProcedure.UpdateMachine, connection);
                 command.CommandType = CommandType.StoredProcedure;
 
-                foreach (var banners in banner.GetType().GetProperties())
+                foreach (var machine in machines.GetType().GetProperties())
                 {
-                    string name = banners.Name;
-                    var value = banners.GetValue(banner, null);
+                    string name = machine.Name;
+                    var value = machine.GetValue(machines, null);
                     command.Parameters.Add(new SqlParameter("@" + name, value == null ? DBNull.Value : value));
                 }
 
@@ -162,12 +138,12 @@ namespace TW.DataLayerSql
             return isUpdate;
         }
 
-        public bool DeleteBanner(long Id)
+        public bool DeleteMachine(long Id)
         {
             bool isDelete = true;
             using (SqlConnection connection = new SqlConnection(CommonUtility.ConnectionString))
             {
-                SqlCommand command = new SqlCommand(StoreProcedure.DeleteBanner, connection);
+                SqlCommand command = new SqlCommand(StoreProcedure.DeleteMachine, connection);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add(new SqlParameter("@Id", Id));
 
@@ -179,40 +155,6 @@ namespace TW.DataLayerSql
                 catch (Exception e)
                 {
                     isDelete = false;
-                    throw new Exception("Exception Deleting Data." + e.Message);
-                }
-                finally
-                {
-                    connection.Close();
-                }
-            }
-            return isDelete;
-        }
-
-        public bool UpdateAbout(AboutUs aboutUs)
-        {
-            bool isUpdate = true;
-
-            using (SqlConnection connection = new SqlConnection(CommonUtility.ConnectionString))
-            {
-                SqlCommand command = new SqlCommand(StoreProcedure.UpdateAbout, connection);
-                command.CommandType = CommandType.StoredProcedure;
-
-                foreach (var about in aboutUs.GetType().GetProperties())
-                {
-                    string name = about.Name;
-                    var value = about.GetValue(aboutUs, null);
-                    command.Parameters.Add(new SqlParameter("@" + name, value == null ? DBNull.Value : value));
-                }
-
-                try
-                {
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                }
-                catch (Exception e)
-                {
-                    isUpdate = false;
                     throw new Exception("Exception Updating Data." + e.Message);
                 }
                 finally
@@ -220,7 +162,7 @@ namespace TW.DataLayerSql
                     connection.Close();
                 }
             }
-            return isUpdate;
+            return isDelete;
         }
     }
 }

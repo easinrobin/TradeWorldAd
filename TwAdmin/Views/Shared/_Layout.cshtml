@@ -162,14 +162,17 @@
     <script>
         $('#sa-question').click(function () {
             swal({
-                title: 'Hmm.. what did you say?',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat, tincidunt vitae ipsum et, pellentesque maximus enim. Mauris eleifend ex semper, lobortis purus sed, pharetra felis',
-                type: 'question',
-                buttonsStyling: false,
-                confirmButtonClass: 'btn btn-sm btn-light',
+                title: 'Confirm',
+                text: 'Are you sure to delete this message?',
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, sir',
+                cancelButtonText: 'Not at all',
                 background: 'rgba(0, 0, 0, 0.96)'
             })
         });
+
+        $('#wysiwyg-editor').trumbowyg();
     </script>
 </body>
 </html>

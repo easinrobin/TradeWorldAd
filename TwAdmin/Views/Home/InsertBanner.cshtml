@@ -1,4 +1,5 @@
-﻿@model TW.Models.AdminViewModel
+﻿@using Vereyon.Web
+@model TW.Models.AdminViewModel
 @{
     ViewBag.Title = "InsertBanner";
 }
@@ -22,13 +23,15 @@
 <div class="card new-contact">
     @using (Html.BeginForm("InsertBanner", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
+        @Html.RenderFlashMessages()
         @Html.HiddenFor(model => model.Banner.Id)
         @Html.HiddenFor(model => model.Banner.ImageUrl)
         //var imagepath = "http://ss.byteheart.com/" + Model.Banner.ImageUrl;
         <div class="new-contact__header">
 
-            @*@Html.TextBoxFor(model => model.Files, new { type = "file", id = "files", @class = "fa fa-camera new-contact__upload" })*@
-            <input type="file" name="files" id="files" class="zmdi zmdi-camera new-contact__upload" />
+            @*@Html.TextBoxFor(model => model.File, new { type = "file", id = "files", @class = "zmdi zmdi-camera new-contact__upload" })*@
+            @*@Html.ValidationMessageFor(model => model.File, "", new{ @class = "text-danger" })*@
+            <input type="file" name="file" id="files" class="zmdi zmdi-camera new-contact__upload" />
 
             <img src="@Model.Banner.ImageUrl" class="new-contact__img" alt="">
         </div>

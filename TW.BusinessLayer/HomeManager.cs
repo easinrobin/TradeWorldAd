@@ -27,6 +27,12 @@ namespace TW.BusinessLayer
             return isDelete;
         }
 
+        public static AboutUs GetAboutUs(long Id)
+        {
+            SqlHomeProvider provider = new SqlHomeProvider();
+            return provider.GetAboutUs(Id);
+        }
+
         #endregion
 
         #region SetBanner
@@ -41,6 +47,12 @@ namespace TW.BusinessLayer
         {
             SqlHomeProvider provider = new SqlHomeProvider();
             return provider.UpdateBanner(banner);
+        }
+
+        public static bool UpdateAbout(AboutUs aboutUs)
+        {
+            SqlHomeProvider provider = new SqlHomeProvider();
+            return provider.UpdateAbout(aboutUs);
         }
 
         #endregion

@@ -9395,6 +9395,11 @@ button, input, optgroup, select, textarea {
         width: 100px;
         height: 100px
     }
+
+    .new-contact__img {
+        width: 150px;
+        height: 150px
+    }
 }
 
 .new-contact__upload {

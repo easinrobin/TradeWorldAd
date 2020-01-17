@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using TW.BusinessLayer;
 using TW.Models;
+using Vereyon.Web;
 
 namespace TwAdmin.Controllers
 {
@@ -16,11 +17,22 @@ namespace TwAdmin.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult About(AdminViewModel av, long Id=1)
         {
-            ViewBag.Message = "Your application description page.";
+            av.AboutUs = HomeManager.GetAboutUs(Id);
+            return View(av);
+        }
 
-            return View();
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult UpdateAbout(AdminViewModel av, HttpPostedFileBase image)
+        {
+            if (av.File != null)
+            {
+                av.AboutUs.ImageUrl = _UploadSingleImage(av, image);
+            }
+            HomeManager.UpdateAbout(av.AboutUs);
+            return RedirectToAction("About");
         }
 
         public ActionResult Banner()
@@ -53,13 +65,28 @@ namespace TwAdmin.Controllers
         {
             if (av.Banner != null && av.Banner.Id > 0)
             {
+                if (av.File != null)
+                {
+                    av.Banner.ImageUrl = _UploadSingleImage(av, image);
+                }
                 HomeManager.UpdateBanner(av.Banner);
             }
             else
             {
-                _UploadImage(av, image);
-                av.Banner.IsActive = true;
-                HomeManager.InsertBanner(av.Banner);
+                if (av.Banner != null)
+                {
+                    if (av.File != null)
+                    {
+                        av.Banner.ImageUrl = _UploadSingleImage(av, image);
+                        av.Banner.IsActive = true;
+                        HomeManager.InsertBanner(av.Banner);
+                    }
+                    else
+                    {
+                        FlashMessage.Danger("Image Required");
+                        return View(av);
+                    }
+                }
             }
 
             return RedirectToAction("Banner");
@@ -84,6 +111,21 @@ namespace TwAdmin.Controllers
                     adminVwModel.Banner.ImageUrl = pathUrl;
                 }
             }
+        }
+
+        private string _UploadSingleImage(AdminViewModel adminVwModel, HttpPostedFileBase images)
+        {
+            var file = adminVwModel.File;
+            string pathUrl = "";
+            string savepath, savefile;
+            var filename = Path.GetFileName(Guid.NewGuid() + file.FileName);
+            savepath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "img/Images/");
+            if (!Directory.Exists(savepath))
+                Directory.CreateDirectory(savepath);
+            savefile = Path.Combine(savepath, filename);
+            file.SaveAs(savefile);
+            pathUrl = "/img/Images/" + filename;
+            return pathUrl;
         }
     }
 }

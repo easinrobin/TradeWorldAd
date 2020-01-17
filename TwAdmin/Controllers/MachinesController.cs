@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TW.BusinessLayer;
+using TW.Models;
+using Vereyon.Web;
 
 namespace TwAdmin.Controllers
 {
@@ -11,7 +15,73 @@ namespace TwAdmin.Controllers
         // GET: Machines
         public ActionResult Index()
         {
-            return View();
+            AdminViewModel av = new AdminViewModel();
+            av.MachineList = MachineManager.GetAllMachines();
+            return View(av);
+        }
+
+        public ActionResult InsertMachines()
+        {
+            AdminViewModel av = new AdminViewModel();
+            av.Machines = new OurMachine();
+            return View(av);
+        }
+
+        public ActionResult UpdateMachine(AdminViewModel av, long Id)
+        {
+            av.Machines = MachineManager.GetMachineById(Id);
+            return View("~/Views/Machines/InsertMachines.cshtml", av);
+        }
+
+        public ActionResult DeleteMachine(long Id)
+        {
+            MachineManager.DeleteMachine(Id);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult InsertMachines(AdminViewModel av, HttpPostedFileBase image)
+        {
+            if (av.Machines != null && av.Machines.Id > 0)
+            {
+                if (av.File != null)
+                {
+                    _UploadSingleImage(av, image);
+                }
+                MachineManager.UpdateMachine(av.Machines);
+            }
+            else
+            {
+                if (av.File != null)
+                {
+                    _UploadSingleImage(av, image);
+                    av.Machines.IsActive = true;
+                    MachineManager.InsertMachine(av.Machines);
+                }
+                else
+                {
+                    FlashMessage.Danger("Image Required");
+                    return View(av);
+                }
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        private void _UploadSingleImage(AdminViewModel adminVwModel, HttpPostedFileBase images)
+        {
+            var file = adminVwModel.File;
+            string pathUrl = "";
+            string savepath, savefile;
+            var filename = Path.GetFileName(Guid.NewGuid() + file.FileName);
+            savepath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "img/Images/");
+            if (!Directory.Exists(savepath))
+                Directory.CreateDirectory(savepath);
+            savefile = Path.Combine(savepath, filename);
+            file.SaveAs(savefile);
+            pathUrl = "/img/Images/" + filename;
+            adminVwModel.Machines.ImageUrl = pathUrl;
         }
     }
 }

@@ -44,7 +44,10 @@
   <ItemGroup>
     <Compile Include="CommonUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlClientProvider.cs" />
+    <Compile Include="SqlCompanySettingsProvider.cs" />
     <Compile Include="SqlHomeProvider.cs" />
+    <Compile Include="SqlMachinesProvider.cs" />
     <Compile Include="SqlUserProvider.cs" />
   </ItemGroup>
   <ItemGroup>
