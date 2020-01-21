@@ -10,5 +10,12 @@ namespace TW.DataLayer
     public interface IHomeProvider
     {
         Banner GetBannerDetails(long bannerId);
+        List<Banner> GetAllBanners();
+        AboutUs GetAboutUs(long Id);
+        long InsertBanner(Banner banner);
+        bool UpdateBanner(Banner banner);
+        bool DeleteBanner(long Id);
+        bool UpdateAbout(AboutUs aboutUs);
+
     }
 }

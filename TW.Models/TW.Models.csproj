@@ -55,6 +55,7 @@
     <Compile Include="ProjectCategory.cs" />
     <Compile Include="ProjectGallery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublicViewModel.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

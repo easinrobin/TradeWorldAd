@@ -59,6 +59,8 @@ a:active {
   text-decoration: none;
 }
 
+
+
 .clear {
   clear: both;
 }
@@ -659,7 +661,7 @@ select.selectmenu {
 #works {
     background: #fcfcfc;
     padding: 50px 0 30px;
-    border-bottom: 1px solid #2d313d;
+    box-shadow: 0 2px 4px -2px #616161;
 }
 
 /* home works */
@@ -3023,4 +3025,18 @@ div.pp_default .pp_description {
 .mb30
 {
     margin-bottom: 30px !important;
+}
+
+#service-content .service-box {
+    margin-bottom: 30px !important;
+}
+
+#description-bg {
+    background: url(/img/AboutUs.jpg);
+    background-size: cover;
+    padding: 100px 0;
+}
+
+#clients-bg {
+    background-color: #404040;
 }

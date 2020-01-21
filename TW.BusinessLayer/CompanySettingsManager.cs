@@ -21,5 +21,10 @@ namespace TW.BusinessLayer
             SqlCompanySettingsProvider provider = new SqlCompanySettingsProvider();
             return provider.UpdateSettings(setting);
         }
+        public static CompanySetting GetCompanySetting()
+        {
+            SqlCompanySettingsProvider provider = new SqlCompanySettingsProvider();
+            return provider.GetCompanySetting();
+        }
     }
 }

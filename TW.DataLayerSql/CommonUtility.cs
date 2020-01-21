@@ -45,5 +45,41 @@ namespace TW.DataLayerSql
         public static string InsertMachine = "sp_InsertOurMachine";
         public static string UpdateMachine = "sp_UpdateOurMachine";
         public static string DeleteMachine = "sp_DeleteOurMachine";
+
+        // Services
+        public static string GetAllServices= "sp_GetOurService";
+        public static string GetServicesById = "sp_GetOurServiceDetails";
+        public static string InsertServices= "sp_InsertOurService";
+        public static string UpdateServices= "sp_UpdateOurService";
+        public static string DeleteService= "sp_DeleteOurService";
+
+        //Projects
+        public static string GetAllProjects = "sp_GetProject";
+        public static string GetProjectsById = "sp_GetProjectDetails";
+        public static string InsertProjects = "sp_InsertProject";
+        public static string UpdateProjects = "sp_UpdateProject";
+        public static string DeleteProject = "sp_DeleteProject";
+
+        // Project Category
+        public static string GetAllProjectCategory = "sp_GetProjectCategory";
+        public static string GetProjectCategoryById = "sp_GetProjectCategoryDetails";
+        public static string InsertProjectCategory = "sp_InsertProjectCategory";
+        public static string UpdateProjectCategory = "sp_UpdateProjectCategory";
+        public static string DeleteProjectCategory = "sp_DeleteProjectCategory";
+
+        // Project Gallery
+        public static string GetAllProjectGallery = "sp_GetProjectGallery";
+        public static string GetProjectGalleryById = "sp_GetProjectGalleryDetails";
+        public static string InsertProjectGallery = "sp_InsertProjectGallery";
+        public static string UpdateProjectGallery = "sp_UpdateProjectGallery";
+        public static string DeleteProjectGallery = "sp_DeleteProjectGallery";
+        public static string GetAllProjectsByCategoryId = "sp_GetProjectsByCategoryId";
+        public static string GetAllProjectGalleriesByProjectId = "sp_GetProjectGalleriesByProjectId";
+        // Feedback
+        public static string GetAllFeedback = "sp_GetFeedback";
+        public static string GetFeedbackById = "sp_GetFeedbackDetails";
+        public static string InsertFeedback = "sp_InsertFeedback";
+        public static string UpdateFeedback = "sp_UpdateFeedback";
+        public static string DeleteFeedback = "sp_DeleteFeedback";
     }
 }

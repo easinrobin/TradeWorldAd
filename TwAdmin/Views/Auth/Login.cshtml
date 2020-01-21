@@ -1,4 +1,5 @@
-﻿@model TW.Models.User
+﻿@using Vereyon.Web
+@model TW.Models.User
 @{
     Layout = null;
 }
@@ -40,6 +41,7 @@
             </div>
             @using (Html.BeginForm("Login", "Auth", FormMethod.Post))
             {
+                @Html.RenderFlashMessages()
                 <div class="login__block__body">
                     <div class="form-group">
                         @Html.TextBoxFor(m => m.UserName, new { @class = "form-control text-center", placeholder = "Your Email Address" })
@@ -48,7 +50,7 @@
 
                     <div class="form-group">
                         @Html.TextBoxFor(m => m.Password, new { @class = "form-control text-center", type = "password", placeholder = "Your Password" })
-                        @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                     </div>
                     <input type="submit" value="Login" class="btn btn-light" />
                 </div>

@@ -9,7 +9,7 @@ namespace TW.Models
         public int Id { get; set; }
 
         [Display(Name = "Project Id")]
-        public int ProjectId { get; set; }
+        public long ProjectId { get; set; }
 
         [Display(Name = "Image")]
         [Required(ErrorMessage = "Image required")]

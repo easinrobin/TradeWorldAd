@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using TW.DataLayer;
 using TW.Models;
 using TW.Utility;
 
 namespace TW.DataLayerSql
 {
-    public class SqlClientProvider
+    public class SqlClientProvider : IClientProvider
     {
         public List<OurClient> GetAllClients()
         {

@@ -29,8 +29,16 @@ namespace TwAdmin.Controllers
 
         public ActionResult UpdateMachine(AdminViewModel av, long Id)
         {
-            av.Machines = MachineManager.GetMachineById(Id);
-            return View("~/Views/Machines/InsertMachines.cshtml", av);
+            if (Id > 0)
+            {
+                av.Machines = MachineManager.GetMachineById(Id);
+                if (av.Machines != null)
+                {
+                    return View("~/Views/Machines/InsertMachines.cshtml", av);
+                }
+            }
+
+            return RedirectToAction("Index");
         }
 
         public ActionResult DeleteMachine(long Id)

@@ -19,6 +19,7 @@ namespace TwAdmin.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult UpdateCompanySettings(AdminViewModel av, HttpPostedFileBase image)
         {
             if (av.File != null)

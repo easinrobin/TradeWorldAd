@@ -13,6 +13,15 @@ namespace TW.Models
         public CompanySetting CompanySetting { get; set; }
         public OurMachine Machines { get; set; }
         public List<OurMachine> MachineList { get; set; }
+        public List<Feedback> FeedbackList { get; set; }
+        public OurService Service { get; set; }
+        public List<OurService> ServiceList { get; set; }
+        public Project Project { get; set; }
+        public List<Project> ProjectList { get; set; }
+        public ProjectCategory ProjectCategory { get; set; }
+        public List<ProjectCategory> ProjectCategoryList { get; set; }
+        public ProjectGallery ProjectGallery { get; set; }
+        public List<ProjectGallery> ProjectGalleryList { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Image Required")]
         public IEnumerable<HttpPostedFileBase> Files { get; set; }

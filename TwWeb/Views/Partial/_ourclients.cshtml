@@ -1,0 +1,18 @@
+﻿@model TW.Models.PublicViewModel
+
+<section id="slider">
+    <div class="container-slider">
+        <div class="slider-body">
+            <h4 class="title text-center">Our <strong><span class="colored">Clients</span></strong></h4>
+            <div class="slider-inner">
+                @foreach (var client in Model.OurClients)
+                {
+                    //var imagePath = "" + client.ImageUrl;
+                    <div><img src="@client.ImageUrl" alt="bengal meat" /></div>
+                }
+               
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -43,9 +43,12 @@
   <ItemGroup>
     <Compile Include="ClientManager.cs" />
     <Compile Include="CompanySettingsManager.cs" />
+    <Compile Include="FeedbackManager.cs" />
     <Compile Include="HomeManager.cs" />
     <Compile Include="MachineManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProjectManager.cs" />
+    <Compile Include="ServiceManager.cs" />
     <Compile Include="UserManager.cs" />
   </ItemGroup>
   <ItemGroup>

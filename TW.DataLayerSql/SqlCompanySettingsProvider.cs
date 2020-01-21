@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using TW.DataLayer;
 using TW.Models;
 using TW.Utility;
 
 namespace TW.DataLayerSql
 {
-    public class SqlCompanySettingsProvider
+    public class SqlCompanySettingsProvider : ICompanySettingsProvider
     {
         public CompanySetting GetCompanySettings(long Id)
         {
@@ -38,7 +35,30 @@ namespace TW.DataLayerSql
                 }
             }
         }
-
+        public CompanySetting GetCompanySetting()
+        {
+            using (SqlConnection connection = new SqlConnection(CommonUtility.ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(StoreProcedure.GetCompanySetting, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    CompanySetting client = new CompanySetting();
+                    client = UtilityManager.DataReaderMap<CompanySetting>(reader);
+                    return client;
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Exception retrieving reviews. " + e.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
         public bool UpdateSettings(CompanySetting setting)
         {
             bool isUpdate = true;

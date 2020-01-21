@@ -50,8 +50,15 @@ namespace TwAdmin.Controllers
 
         public ActionResult UpdateBanner(AdminViewModel av,long Id)
         {
-            av.Banner = HomeManager.GetBannerDetails(Id);
-            return View("~/Views/Home/InsertBanner.cshtml",av);
+            if (Id > 0)
+            {
+                av.Banner = HomeManager.GetBannerDetails(Id);
+                if (av.Banner != null)
+                {
+                    return View("~/Views/Home/InsertBanner.cshtml", av);
+                }
+            }
+            return RedirectToAction("Banner");
         }
 
         public ActionResult DeleteBanner(long Id)

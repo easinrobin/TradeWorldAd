@@ -1,0 +1,63 @@
+﻿@model TW.Models.PublicViewModel
+@{
+    ViewBag.Title = "Our Projects";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="inner-headline">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="inner-heading">
+                    <ul class="breadcrumb">
+                        <li><a href="/Home/">Home</a> <i class="icon-angle-right"></i></li>
+                        <li class="active">Gallery</li>
+                    </ul>
+                    <h2>@Html.Raw(Model.Project.ProjectName)</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="content" class="alt-bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <p>Signage Consultant: @Html.Raw(Model.Project.ArchitectName)</p>
+                <p>Signage Contractor: @Html.Raw(Model.Project.Consultant_Contractor)</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="gallery-content">
+    <div class="container">
+        <div class="row">
+
+            <div class="grid cs-style-4">
+                @foreach (var data in Model.ProjectGalleries)
+                {
+                    //var imagePath = "" + data.ImageUrl;
+                    <div class="span6">
+                        <div class="item">
+                            <figure>
+                                <div><img src="@data.ImageUrl" alt=""/></div>
+                                <figcaption>
+                                    <div>
+                                        <span>
+                                            <a href="@data.ImageUrl" data-pretty="prettyPhoto[gallery1]" title="">
+                                                <i class="icon-plus icon-circled icon-bglight icon-2x"></i>
+                                            </a>
+                                        </span>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

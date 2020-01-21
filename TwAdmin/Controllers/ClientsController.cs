@@ -29,8 +29,15 @@ namespace TwAdmin.Controllers
 
         public ActionResult UpdateClient(AdminViewModel av, long Id)
         {
-            av.Clients = ClientManager.GetClientById(Id);
-            return View("~/Views/Clients/InsertClient.cshtml", av);
+            if (Id > 0)
+            {
+                av.Clients = ClientManager.GetClientById(Id);
+                if (av.Clients != null)
+                {
+                    return View("~/Views/Clients/InsertClient.cshtml", av);
+                }
+            }
+            return RedirectToAction("Index");
         }
 
         public ActionResult DeleteClient(long Id)

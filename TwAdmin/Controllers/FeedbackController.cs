@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using TW.BusinessLayer;
+using TW.Models;
 
 namespace TwAdmin.Controllers
 {
@@ -11,7 +9,15 @@ namespace TwAdmin.Controllers
         // GET: Feedback
         public ActionResult Index()
         {
-            return View();
+            AdminViewModel av = new AdminViewModel();
+            av.FeedbackList = FeedbackManager.GetAllFeedback();
+            return View(av);
+        }
+
+        public ActionResult DeleteFeedback(long Id)
+        {
+            FeedbackManager.DeleteFeedback(Id);
+            return RedirectToAction("Index");
         }
     }
 }

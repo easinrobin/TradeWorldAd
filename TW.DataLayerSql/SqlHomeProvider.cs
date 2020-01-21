@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using TW.DataLayer;
 using TW.Models;
 using TW.Utility;
 
 namespace TW.DataLayerSql
 {
-    public class SqlHomeProvider
+    public class SqlHomeProvider : IHomeProvider
     {
         public Banner GetBannerDetails(long bannerId)
         {

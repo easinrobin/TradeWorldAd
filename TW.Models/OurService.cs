@@ -28,7 +28,7 @@ namespace TW.Models
         public string CreatedBy { get; set; }
 
         [Display(Name = "Created Date")]
-        public DateTime CreatedDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
 
         [Display(Name = "Is Active")]
         public bool IsActive { get; set; }

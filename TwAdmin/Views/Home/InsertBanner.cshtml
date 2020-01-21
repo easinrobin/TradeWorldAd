@@ -2,6 +2,7 @@
 @model TW.Models.AdminViewModel
 @{
     ViewBag.Title = "InsertBanner";
+
 }
 
 
@@ -40,7 +41,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label>Title</label>
+                        <label>Title</label>&nbsp;&nbsp;<span style="font-size: 18px; color: #1AD69C"><i class="zmdi zmdi-help-outline" title="Use <span class=&quot;colored&quot;> </span> for text coloring" data-toggle="tooltip" data-placement="top"></i></span>
                         @Html.TextBoxFor(model => model.Banner.Title, new { @class = "form-control", placeholder = "Give a Title" })
                         @Html.ValidationMessageFor(model => model.Banner.Title, "", new { @class = "text-danger" })
 

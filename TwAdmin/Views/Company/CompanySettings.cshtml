@@ -93,7 +93,7 @@
 
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label>Google Map Location</label>&nbsp;&nbsp;<span style="font-size: 18px; color: #1AD69C"><i class="zmdi zmdi-help-outline" title="Paste the text after 'https://www.google.com/maps/embed?pb='" data-toggle="tooltip" data-placement="top"></i></span>
+                        <label>Google Map Location</label>&nbsp;&nbsp;<span style="font-size: 18px; color: #1AD69C"><i class="zmdi zmdi-help-outline" title="Paste the whole <iframe> link" data-toggle="tooltip" data-placement="top"></i></span>
                         @Html.TextBoxFor(model => model.CompanySetting.GMapLocation, new { @class = "form-control", placeHolder = "Google Map Location Link" })
                         @Html.ValidationMessageFor(model => model.CompanySetting.GMapLocation, "", new { @class = "text-danger" })
                     </div>

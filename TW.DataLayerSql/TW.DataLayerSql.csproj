@@ -46,8 +46,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlClientProvider.cs" />
     <Compile Include="SqlCompanySettingsProvider.cs" />
+    <Compile Include="SqlFeedbackProvider.cs" />
     <Compile Include="SqlHomeProvider.cs" />
     <Compile Include="SqlMachinesProvider.cs" />
+    <Compile Include="SqlProjectCategoryProvider.cs" />
+    <Compile Include="SqlProjectGalleryProvider.cs" />
+    <Compile Include="SqlProjectProvider.cs" />
+    <Compile Include="SqlServiceProvider.cs" />
     <Compile Include="SqlUserProvider.cs" />
   </ItemGroup>
   <ItemGroup>

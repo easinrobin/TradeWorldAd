@@ -264,6 +264,14 @@
     <Content Include="Views\Home\InsertBanner.cshtml" />
     <Content Include="Views\Clients\InsertClient.cshtml" />
     <Content Include="Views\Machines\InsertMachines.cshtml" />
+    <Content Include="Views\Service\InsertService.cshtml" />
+    <Content Include="Views\Projects\Partial\_Project.cshtml" />
+    <Content Include="Views\Projects\Partial\_ProjectCategory.cshtml" />
+    <Content Include="Views\Projects\Partial\_Gallery.cshtml" />
+    <Content Include="Views\Projects\Create.cshtml" />
+    <Content Include="Views\Projects\UpdateProject.cshtml" />
+    <Content Include="Views\Projects\GalleryList.cshtml" />
+    <Content Include="Views\Projects\CreateGallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

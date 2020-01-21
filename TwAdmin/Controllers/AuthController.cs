@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using TW.BusinessLayer;
 using TW.Models;
+using Vereyon.Web;
 
 namespace TwAdmin.Controllers
 {
@@ -31,7 +32,7 @@ namespace TwAdmin.Controllers
             }
             else
             {
-                ViewBag.ErrMsg = "Please enter email and password!.";
+                FlashMessage.Danger("Username or Password Incorrect");
             }
 
             return View(user);

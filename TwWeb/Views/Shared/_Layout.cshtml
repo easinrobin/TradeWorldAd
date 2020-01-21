@@ -1,9 +1,18 @@
-﻿<!DOCTYPE html>
+﻿@{
+    TW.Models.CompanySetting companySetting = (TW.Models.CompanySetting)Session["CompanySetting"];
+
+    if (companySetting == null)
+    {
+        companySetting = TW.BusinessLayer.CompanySettingsManager.GetCompanySettings(1);
+        Session["CompanySetting"] = companySetting;
+    }
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - TradeWorld Advertising | Creative Digital Sign Manufacturer & Supplier</title>
+    <title>@ViewBag.Title - @companySetting.CompanyName | Creative Digital Sign Manufacturer & Supplier</title>
     <meta name="description" content="tradeworld advertising, creative digital sign manufacturer & supplier" />
     <meta name="title" content="trade world advertising">
     <link href="https://fonts.googleapis.com/css?family=Handlee|Open+Sans:300,400,600,700,800" rel="stylesheet">
@@ -27,10 +36,10 @@
 
     @Styles.Render("~/Content/ThirdPartyCss/shortcodes")
 
-    
+
 
     @Scripts.Render("~/bundles/ThirdPartyJs/modernizr")
-    
+
     @Styles.Render("~/Content/CustomCss/style")
     @Styles.Render("~/Content/ThirdPartyCss/defaultColor")
 </head>
@@ -43,20 +52,20 @@
                 <div class="container">
                     <div class="row">
                         <div class="span6">
-                            <p class="topcontact"><i class="icon-phone"></i> 01991-744959</p>
+                            <p class="topcontact"><i class="icon-phone"></i> @Html.Raw(companySetting.MainContactNo)</p>
                         </div>
                         <div class="span6">
 
                             <ul class="social-network">
                                 <li>
-                                    <a href="#" data-placement="bottom" title="Facebook"><i class="icon-facebook icon-white"></i></a>
+                                    <a href="@companySetting.FacebookPageUrl" data-placement="bottom" title="Facebook"><i class="icon-facebook icon-white"></i></a>
                                 </li>
-                                <li><a href="#" data-placement="bottom" title="Twitter"><i class="icon-twitter icon-white"></i></a></li>
+                                <li><a href="@companySetting.TwitterPageUrl" data-placement="bottom" title="Twitter"><i class="icon-twitter icon-white"></i></a></li>
                                 <li>
-                                    <a href="#" data-placement="bottom" title="Linkedin"><i class="icon-linkedin icon-white"></i></a>
+                                    <a href="@companySetting.LinkedInPageUrl" data-placement="bottom" title="Linkedin"><i class="icon-linkedin icon-white"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#" data-placement="bottom" title="Google +"><i class="icon-google-plus icon-white"></i></a>
+                                    <a href="@companySetting.GooglePlusPageUrl" data-placement="bottom" title="Google +"><i class="icon-google-plus icon-white"></i></a>
                                 </li>
                             </ul>
 
@@ -68,7 +77,7 @@
                 <div class="row nomargin">
                     <div class="span4">
                         <div class="logo">
-                            <a href="index.html"><img src="img/logo.png" alt="" /></a>
+                            <a href="/Home/"><img src="@companySetting.LogoUrl" alt="" /></a>
                         </div>
                     </div>
                     <div class="span8">
@@ -76,13 +85,14 @@
                             <div class="navigation">
                                 <nav>
                                     <ul class="nav topnav">
-                                        <li class="active">
-                                            <a href="index.html"> Home </a>
+                                        <li>
+                                            <a href="/Home/Index"> Home </a>
                                         </li>
-                                        <li><a href="about.html">About us</a></li>
-                                        <li><a href="services.html">Service</a></li>
-                                        <li><a href="our-projects.html">Our Projects</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="/Home/About">About us</a></li>
+                                        <li><a href="/Home/Services">Service</a></li>
+                                        <li><a href="/Home/Ourprojects">Our Projects</a></li>
+                                        <li><a href="/Home/Clients">Our Clients</a></li>
+                                        <li><a href="/Home/Contact">Contact</a></li>
 
                                     </ul>
                                 </nav>
@@ -97,22 +107,7 @@
 
         @RenderBody()
 
-        <section id="slider">
-            <div class="container-slider">
-                <div class="slider-body">
-                    <h4 class="title text-center">Our <strong><span class="colored">Clients</span></strong></h4>
-                    <div class="slider-inner">
-                        <div><img src="img/Clients/rsz_bengal-meat.png" alt="bengal meat" /></div>
-                        <div><img src="img/Clients/rsz_dhaba.jpg" alt="dhaba" /></div>
-                        <div><img src="img/Clients/rsz_max.png" alt="max" /></div>
-                        <div><img src="img/Clients/rsz_riocoffee.jpg" alt="rio coffee" /></div>
-                        <div><img src="img/Clients/rsz_well-food.jpg" alt="well food" /></div>
-                        <div><img src="img/Clients/rsz_bti.png" alt="bti" /></div>
-                    </div>
 
-                </div>
-            </div>
-        </section>
         <footer>
             <div class="container">
                 <div class="row">
@@ -120,11 +115,11 @@
                         <div class="widget">
                             <h5 class="widgetheading">Browse pages</h5>
                             <ul class="link-list">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="services.html">Service</a></li>
-                                <li><a href="our-projects.html">Our Projects</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="/Home/About">Home</a></li>
+                                <li><a href="/Home/About">About Us</a></li>
+                                <li><a href="/Home/Services">Service</a></li>
+                                <li><a href="/Home/ourprojects.">Our Projects</a></li>
+                                <li><a href="/Home/contact">Contact</a></li>
                             </ul>
 
                         </div>
@@ -133,29 +128,27 @@
                         <div class="widget">
                             <h5 class="widgetheading">Get in touch</h5>
                             <address>
-                                <strong>Trade World Advertising</strong><br>
-                                Hasan Villa, House No # 121, Ward # 06
-                                Azampur Kachabazar, Mukti Joddha Road
-                                Dokkinkhan, Uttara, Dhaka-1230, Bangladesh
+                                <strong>@Html.Raw(companySetting.CompanyName)</strong><br>
+                              @Html.Raw(companySetting.CompanyAddress)
                             </address>
                             <p>
-                                <i class="icon-phone"></i> 01991-744959<br>
-                                <i class="icon-envelope-alt"></i> tradeworld17@yahoo.com<br>
-                                <i class="icon-envelope-alt"></i> tradeworld17@gmail.com
+                                <i class="icon-phone"></i>  @Html.Raw(companySetting.MainContactNo)<br>
+                                <i class="icon-envelope-alt"></i>  @Html.Raw(companySetting.Email_1)<br>
+                                <i class="icon-envelope-alt"></i>  @Html.Raw(companySetting.Email_2)
                             </p>
                         </div>
                     </div>
                     <div class="span4">
                         <ul class="social-network-footer">
                             <li>
-                                <a href="#" data-placement="bottom" title="Facebook"><i class="icon-facebook icon-white"></i></a>
+                                <a href="@companySetting.FacebookPageUrl" data-placement="bottom" title="Facebook"><i class="icon-facebook icon-white"></i></a>
                             </li>
-                            <li><a href="#" data-placement="bottom" title="Twitter"><i class="icon-twitter icon-white"></i></a></li>
+                            <li><a href="@companySetting.TwitterPageUrl" data-placement="bottom" title="Twitter"><i class="icon-twitter icon-white"></i></a></li>
                             <li>
-                                <a href="#" data-placement="bottom" title="Linkedin"><i class="icon-linkedin icon-white"></i></a>
+                                <a href="@companySetting.LinkedInPageUrl" data-placement="bottom" title="Linkedin"><i class="icon-linkedin icon-white"></i></a>
                             </li>
                             <li>
-                                <a href="#" data-placement="bottom" title="Google +"><i class="icon-google-plus icon-white"></i></a>
+                                <a href="@companySetting.GooglePlusPageUrl" data-placement="bottom" title="Google +"><i class="icon-google-plus icon-white"></i></a>
                             </li>
                         </ul>
 
@@ -167,7 +160,7 @@
                     <div class="row">
                         <div class="span6">
                             <div class="copyright">
-                                <p><span>&copy; Trade World Advertising. All right reserved</span></p>
+                                <p><span>&copy; @Html.Raw(companySetting.CompanyName). All right reserved</span></p>
                             </div>
                         </div>
                         <div class="span6">
@@ -181,10 +174,10 @@
         </footer>
         <a href="#" class="scrollup"><i class="icon-angle-up icon-square icon-bglight icon-2x active"></i></a>
     </div>
-    
-@Scripts.Render("~/bundles/ThirdPartyJs/jquery-single")
-@*@Scripts.Render("~/bundles/ThirdPartyJs/jquery")*@
-@Scripts.Render("~/bundles/ThirdPartyJs/easing")
+
+    @Scripts.Render("~/bundles/ThirdPartyJs/jquery-single")
+    @*@Scripts.Render("~/bundles/ThirdPartyJs/jquery")*@
+    @Scripts.Render("~/bundles/ThirdPartyJs/easing")
     @Scripts.Render("~/bundles/ThirdPartyJs/bootstrap")
     @Scripts.Render("~/bundles/ThirdPartyJs/modernizrcustom")
     @Scripts.Render("~/bundles/ThirdPartyJs/toucheffects")
@@ -207,16 +200,16 @@
     @Scripts.Render("~/bundles/ThirdPartyJs/jqueryvalUnobtrusive")
     @Scripts.Render("~/bundles/ThirdPartyJs/cslider")
     @RenderSection("scripts", required: false)
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('.slider-inner').slick({
-            slidesToShow: 5,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 1000,
-            dots: true,
-            arrows: false,
-            responsive: [{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.slider-inner').slick({
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1000,
+                dots: true,
+                arrows: false,
+                responsive: [{
                     breakpoint: 768,
                     settings: {
                         arrows: false,
@@ -234,10 +227,22 @@
                         slidesToShow: 1
                     }
                 }
-            ]
+                ]
+            });
+
         });
 
-    });
-</script>
+        $(function(){
+            // this will get the full URL at the address bar
+            var url = window.location.href; 
+            // passes on every "a" tag 
+            $(".nav a").each(function() {
+                // checks if its the same on the address bar
+                if(url == (this.href)) { 
+                    $(this).closest("li").addClass("active");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
