@@ -1,0 +1,48 @@
+﻿@model TW.Models.PublicViewModel
+@{
+    ViewBag.Title = "Our Projects";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="inner-headline">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="inner-heading">
+                    <ul class="breadcrumb">
+                        <li><a href="/Home/">Home</a> <i class="icon-angle-right"></i></li>
+                        <li class="active">Our Projects</li>
+                    </ul>
+                    <h2>Our Projects at a glance</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="project-details">
+    <div class="container">
+        <div class="row">
+            @foreach (var cat in Model.ProjectCategories)
+            {
+                //var imagePath = "" + cat.ImageUrl;
+                <div class="span4 box-project">
+                    <a href="/Home/Projectdetails/@cat.Id">
+                        <div class="service-box aligncenter flyIn">
+                            <h5>@Html.Raw(cat.Name)</h5>
+                            <div class="icon">
+                                <img src="@cat.ImageUrl" alt="" />
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+
+        </div>
+    </div>
+
+
+</section>
+
+@Html.Partial("~/Views/Partial/_specialpriceadds.cshtml", Model)
+@Html.Partial("~/Views/Partial/_ourclients.cshtml", Model)

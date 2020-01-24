@@ -17,15 +17,15 @@
     @Styles.Render("~/Content/demo")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body data-sa-theme="1">
+<body data-sa-theme="4">
     <main class="main">
-        <div class="page-loader">
-            <div class="page-loader__spinner">
-                <svg viewBox="25 25 50 50">
-                    <circle cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
-                </svg>
-            </div>
-        </div>
+        @*<div class="page-loader">
+                <div class="page-loader__spinner">
+                    <svg viewBox="25 25 50 50">
+                        <circle cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+                    </svg>
+                </div>
+            </div>*@
 
         <header class="header">
             <div class="navigation-trigger hidden-xl-up" data-sa-action="aside-open" data-sa-target=".sidebar">
@@ -33,7 +33,7 @@
             </div>
 
             <div class="logo hidden-sm-down">
-                <h1><a href="~/Home/Index">Share Space</a></h1>
+                <h1><a href="~/Home/Index">Trade World</a></h1>
             </div>
 
             <ul class="top-nav">
@@ -54,43 +54,43 @@
 
                 <div class="user">
                     <div class="user__info" data-toggle="dropdown">
-                        <img class="user__img" src="/img/avatar/ava1.png" alt="">
-                        @*<div>
-                            @if (Session["UserName"] != null && Session["Name"] != null)
-                            {
-                                <div class="user__name">@Session["Name"].ToString()</div>
-                                <div class="user__email">@Session["UserName"].ToString()</div>
-                            }
-                            else
-                            {
-                                Response.Redirect("~/Auth/Login");
-                            }
-                        </div>*@
+                        <img class="user__img" src="/Content/img/avatar/ava1.png" alt="">
+                        <div>
+                                @if (Session["UserName"] != null && Session["Name"] != null)
+                                {
+                                    <div class="user__name">@Session["Name"].ToString()</div>
+                                    <div class="user__email">@Session["UserName"].ToString()</div>
+                                }
+                                else
+                                {
+                                    Response.Redirect("~/Auth/Login");
+                                }
+                            </div>
                     </div>
 
                     @*<div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">View Profile</a>
-                        <a class="dropdown-item" href="#">Settings</a>
-                        <a class="dropdown-item" href="#">Logout</a>
-                    </div>*@
+                            <a class="dropdown-item" href="#">View Profile</a>
+                            <a class="dropdown-item" href="#">Settings</a>
+                            <a class="dropdown-item" href="#">Logout</a>
+                        </div>*@
                 </div>
 
                 <ul class="navigation">
-                    <li><a href="/Home/Index"><i class="zmdi zmdi-view-dashboard"></i>Banner</a></li>
+                    <li><a href="/Home/Banner"><i class="zmdi zmdi-view-dashboard"></i>Banner</a></li>
 
                     <li><a href="/Home/About"><i class="zmdi zmdi-accounts-list"></i>About Us</a></li>
 
                     <li><a href="/Company/CompanySettings"><i class="zmdi zmdi-city"></i>Company Settings</a></li>
 
-                    <li><a href="/Clients/Client"><i class="zmdi zmdi-accounts"></i>Clients</a></li>
+                    <li><a href="/Clients/Index"><i class="zmdi zmdi-accounts"></i>Clients</a></li>
 
-                    <li><a href="/Machines/MachineList"><i class="zmdi zmdi-washing-machine"></i>Machines</a></li>
+                    <li><a href="/Machines/Index"><i class="zmdi zmdi-washing-machine"></i>Machines</a></li>
 
-                    <li><a href="/Services/ServiceList"><i class="zmdi zmdi-assignment-check"></i>Service</a></li>
+                    <li><a href="/Service/Services"><i class="zmdi zmdi-assignment-check"></i>Service</a></li>
 
-                    <li><a href="/Project/Projects"><i class="zmdi zmdi-collection-text"></i>Project</a></li>
+                    <li><a href="/Projects/Index"><i class="zmdi zmdi-collection-text"></i>Project</a></li>
 
-                    <li><a href="/Feedback/Feedbacks"><i class="zmdi zmdi-thumb-up"></i>Feedback</a></li>
+                    <li><a href="/Feedback/Index"><i class="zmdi zmdi-thumb-up"></i>Feedback</a></li>
 
                     <li><a href="/Auth/Logout"><i class="zmdi zmdi-sign-in"></i>Logout</a></li>
 
@@ -107,26 +107,72 @@
         </section>
     </main>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/jqueryvalUnobtrusive")
-    @Scripts.Render("~/bundles/popper")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/moment")
-    @Scripts.Render("~/bundles/dataTables")
-    @Scripts.Render("~/bundles/buttons-html5")
-    @Scripts.Render("~/bundles/buttons-print")
-    @Scripts.Render("~/bundles/dataTables-buttons")
-    @Scripts.Render("~/bundles/dropzone")
-    @Scripts.Render("~/bundles/flatpickr")
-    @Scripts.Render("~/bundles/scrollbar")
-    @Scripts.Render("~/bundles/jquery-scrollLock")
-    @Scripts.Render("~/bundles/lightgallery")
-    @Scripts.Render("~/bundles/select2")
-    @Scripts.Render("~/bundles/sweetalert2")
-    @Scripts.Render("~/bundles/trumbowyg")
-    @Scripts.Render("~/bundles/appMin")
-    @Scripts.Render("~/bundles/demo")
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/popper")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/jqueryvalUnobtrusive")
+        @Scripts.Render("~/bundles/scrollbar")
+        @Scripts.Render("~/bundles/jquery-scrollLock")
+
+        @Scripts.Render("~/bundles/moment")
+        @Scripts.Render("~/bundles/dataTables")
+        @Scripts.Render("~/bundles/dataTables-buttons")
+        @Scripts.Render("~/bundles/buttons-print")
+        @Scripts.Render("~/bundles/buttons-html5")
+
+        @Scripts.Render("~/bundles/dropzone")
+        @Scripts.Render("~/bundles/flatpickr")
+
+        @Scripts.Render("~/bundles/lightgallery")
+        @Scripts.Render("~/bundles/select2")
+        @Scripts.Render("~/bundles/sweetalert2")
+        @Scripts.Render("~/bundles/trumbowyg")
+        @Scripts.Render("~/bundles/appMin")
+        @Scripts.Render("~/bundles/demo")*@
+    @*<script>
+            $('.dropdown').dropdown();
+        </script>*@
+
+    <script src="~/Scripts/jquery-2.1.4.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/jquery.scrollbar.min.js"></script>
+    <script src="~/Scripts/jquery-scrollLock.min.js"></script>
+
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/dataTables.buttons.min.js"></script>
+    <script src="~/Scripts/buttons.print.min.js"></script>
+    <script src="~/Scripts/buttons.html5.min.js"></script>
+
+    <script src="~/Scripts/moment.min.js"></script>
+    <script src="~/Scripts/dropzone.min.js"></script>
+    <script src="~/Scripts/flatpickr.min.js"></script>
+    <script src="~/Scripts/lightgallery-all.min.js"></script>
+    <script src="~/Scripts/select2.full.min.js"></script>
+    <script src="~/Scripts/sweetalert2.min.js"></script>
+    <script src="~/Scripts/trumbowyg.min.js"></script>
+
+    <script src="~/Scripts/CustomJs/app.min.js"></script>
+    <script src="~/Scripts/CustomJs/demo.js"></script>
+
     @RenderSection("scripts", required: false)
+    <script>
+        $('#sa-question').click(function () {
+            swal({
+                title: 'Confirm',
+                text: 'Are you sure to delete this message?',
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, sir',
+                cancelButtonText: 'Not at all',
+                background: 'rgba(0, 0, 0, 0.96)'
+            })
+        });
+
+        $('#wysiwyg-editor').trumbowyg();
+    </script>
 </body>
 </html>

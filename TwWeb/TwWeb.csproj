@@ -128,7 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\CustomCss\style.css" />
-    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\fontawesome\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\slick.svg" />
     <Content Include="Content\ThirdPartyCss\animate.css" />
     <Content Include="Content\ThirdPartyCss\bootstrap-responsive.css" />
@@ -139,6 +139,7 @@
     <Content Include="Content\ThirdPartyCss\cslider.css" />
     <Content Include="Content\ThirdPartyCss\default.css" />
     <Content Include="Content\ThirdPartyCss\flexslider.css" />
+    <Content Include="Content\ThirdPartyCss\flickity.min.css" />
     <Content Include="Content\ThirdPartyCss\font-awesome-ie7.css" />
     <Content Include="Content\ThirdPartyCss\font-awesome.css" />
     <Content Include="Content\ThirdPartyCss\jquery.bxslider.css" />
@@ -150,8 +151,176 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
+    <Content Include="img\AboutUs.jpg" />
+    <Content Include="img\avatar.png" />
+    <Content Include="img\bg_direction_nav.png" />
+    <Content Include="img\bodybg\bg1.png" />
+    <Content Include="img\bodybg\bg10.png" />
+    <Content Include="img\bodybg\bg2.png" />
+    <Content Include="img\bodybg\bg3.png" />
+    <Content Include="img\bodybg\bg4.png" />
+    <Content Include="img\bodybg\bg5.png" />
+    <Content Include="img\bodybg\bg6.png" />
+    <Content Include="img\bodybg\bg7.png" />
+    <Content Include="img\bodybg\bg8.png" />
+    <Content Include="img\bodybg\bg9.png" />
+    <Content Include="img\camera\camera-loader.gif" />
+    <Content Include="img\camera\camera_skins.png" />
+    <Content Include="img\camera\patterns\overlay1.png" />
+    <Content Include="img\camera\patterns\overlay10.png" />
+    <Content Include="img\camera\patterns\overlay2.png" />
+    <Content Include="img\camera\patterns\overlay3.png" />
+    <Content Include="img\camera\patterns\overlay4.png" />
+    <Content Include="img\camera\patterns\overlay5.png" />
+    <Content Include="img\camera\patterns\overlay6.png" />
+    <Content Include="img\camera\patterns\overlay7.png" />
+    <Content Include="img\camera\patterns\overlay8.png" />
+    <Content Include="img\camera\patterns\overlay9.png" />
+    <Content Include="img\camera\patterns\_notes\dwsync.xml" />
+    <Content Include="img\Clients\bengal-meat.png" />
+    <Content Include="img\Clients\dhaba.jpg" />
+    <Content Include="img\Clients\max.png" />
+    <Content Include="img\Clients\riocoffee.jpg" />
+    <Content Include="img\Clients\rsz_bengal-meat.png" />
+    <Content Include="img\Clients\rsz_bti.png" />
+    <Content Include="img\Clients\rsz_dhaba.jpg" />
+    <Content Include="img\Clients\rsz_max.png" />
+    <Content Include="img\Clients\rsz_riocoffee.jpg" />
+    <Content Include="img\Clients\rsz_well-food.jpg" />
+    <Content Include="img\Clients\well-food.jpg" />
+    <Content Include="img\company-about.jpg" />
+    <Content Include="img\dummies\blog\img1.jpg" />
+    <Content Include="img\dummies\blog\img2.jpg" />
+    <Content Include="img\dummies\blog\img3.jpg" />
+    <Content Include="img\dummies\blog\small\1.jpg" />
+    <Content Include="img\dummies\blog\small\2.jpg" />
+    <Content Include="img\dummies\blog\small\3.jpg" />
+    <Content Include="img\dummies\blog\thumbs\img1.jpg" />
+    <Content Include="img\dummies\blog\thumbs\img2.jpg" />
+    <Content Include="img\dummies\blog\thumbs\img3.jpg" />
+    <Content Include="img\dummies\blog\thumbs\img4.jpg" />
+    <Content Include="img\dummies\blog\thumbs\no-thumb.jpg" />
+    <Content Include="img\dummies\blog\thumbs\quote-thumb.jpg" />
+    <Content Include="img\dummies\blog\thumbs\small1.jpg" />
+    <Content Include="img\dummies\dummy-1.jpg" />
+    <Content Include="img\dummies\team\1.jpg" />
+    <Content Include="img\dummies\team\2.jpg" />
+    <Content Include="img\dummies\team\3.jpg" />
+    <Content Include="img\dummies\team\4.jpg" />
+    <Content Include="img\dummies\team\5.jpg" />
+    <Content Include="img\dummies\team\6.jpg" />
+    <Content Include="img\dummies\team\7.jpg" />
+    <Content Include="img\dummies\team\8.jpg" />
+    <Content Include="img\dummies\testimonial\1.png" />
+    <Content Include="img\dummies\testimonial\2.png" />
+    <Content Include="img\dummies\testimonial\3.png" />
+    <Content Include="img\dummies\testimonial\4.png" />
+    <Content Include="img\dummies\works\1.jpg" />
+    <Content Include="img\dummies\works\2.jpg" />
+    <Content Include="img\dummies\works\3.jpg" />
+    <Content Include="img\dummies\works\4.jpg" />
+    <Content Include="img\dummies\works\5.jpg" />
+    <Content Include="img\dummies\works\6.jpg" />
+    <Content Include="img\dummies\works\7.jpg" />
+    <Content Include="img\dummies\works\8.jpg" />
+    <Content Include="img\dummies\works\big.png" />
+    <Content Include="img\dummies\works\detail\1.jpg" />
+    <Content Include="img\Gallery\01.jpg" />
+    <Content Include="img\Gallery\02.jpg" />
+    <Content Include="img\Gallery\03.jpg" />
+    <Content Include="img\Gallery\04.jpg" />
+    <Content Include="img\Gallery\05.jpg" />
+    <Content Include="img\Gallery\06.jpg" />
+    <Content Include="img\Gallery\07.jpg" />
+    <Content Include="img\Gallery\08.jpg" />
+    <Content Include="img\Gallery\09.jpg" />
+    <Content Include="img\Gallery\10.jpg" />
+    <Content Include="img\Gallery\11.jpg" />
+    <Content Include="img\Gallery\amway_sign_board_gurgaon_01.jpg" />
+    <Content Include="img\Gallery\Baani_Signage_maker_in_gurgaon.jpg" />
+    <Content Include="img\Gallery\cnc.jpg" />
+    <Content Include="img\Gallery\dhaba.jpg" />
+    <Content Include="img\Gallery\eco-solvent-printing-in-gurgaon-1.jpg" />
+    <Content Include="img\Gallery\flex-printing-in-delhi-gurgaon-noida-1.jpg" />
+    <Content Include="img\Gallery\img1.jpg" />
+    <Content Include="img\Gallery\img3.jpg" />
+    <Content Include="img\Gallery\injection.jpg" />
+    <Content Include="img\Gallery\paragon.jpg" />
+    <Content Include="img\Gallery\riocoffee.jpg" />
+    <Content Include="img\Gallery\Samsung_Signage_Maker_in_Gurgaon.jpg" />
+    <Content Include="img\Gallery\Signage_maker_in_gurgaon_1.jpg" />
+    <Content Include="img\Gallery\uv.jpg" />
+    <Content Include="img\Gallery\wellfood.jpg" />
     <Content Include="img\glyphicons-halflings-white.png" />
     <Content Include="img\glyphicons-halflings.png" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\lp\imac.png" />
+    <Content Include="img\lp\screen-1.png" />
+    <Content Include="img\Ourvaluableclients2.png" />
+    <Content Include="img\Ourvaluableclients.png" />
+    <Content Include="img\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="img\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="img\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="img\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="img\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="img\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="img\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="img\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="img\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="img\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="img\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="img\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="img\prettyPhoto\default\default_thumb.png" />
+    <Content Include="img\prettyPhoto\default\loader.gif" />
+    <Content Include="img\prettyPhoto\default\sprite.png" />
+    <Content Include="img\prettyPhoto\default\sprite_next.png" />
+    <Content Include="img\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="img\prettyPhoto\default\sprite_x.png" />
+    <Content Include="img\prettyPhoto\default\sprite_y.png" />
+    <Content Include="img\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="img\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="img\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="img\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="img\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="img\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="img\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="img\prettyPhoto\facebook\loader.gif" />
+    <Content Include="img\prettyPhoto\facebook\sprite.png" />
+    <Content Include="img\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="img\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="img\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="img\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="img\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="img\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="img\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="img\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="img\prettyPhoto\light_square\loader.gif" />
+    <Content Include="img\prettyPhoto\light_square\sprite.png" />
+    <Content Include="img\service\backlit.jpg" />
+    <Content Include="img\service\bannerstand.jpg" />
+    <Content Include="img\service\Billboard.jpg" />
+    <Content Include="img\service\bti.png" />
+    <Content Include="img\service\cnc.jpg" />
+    <Content Include="img\service\dhaba.jpg" />
+    <Content Include="img\service\digital print.jpg" />
+    <Content Include="img\service\injection.jpg" />
+    <Content Include="img\service\paragon.jpg" />
+    <Content Include="img\service\riocoffee.jpg" />
+    <Content Include="img\service\SingleSidedLightBoxes.jpg" />
+    <Content Include="img\service\uv.jpg" />
+    <Content Include="img\service\wallbranding.jpg" />
+    <Content Include="img\service\wellfood.jpg" />
+    <Content Include="img\slides\camera\slide1\1.png" />
+    <Content Include="img\slides\camera\slide1\img1.jpg" />
+    <Content Include="img\slides\camera\slide1\screen.png" />
+    <Content Include="img\slides\camera\slide1\screen_1.png" />
+    <Content Include="img\slides\camera\slide2\iMac.png" />
+    <Content Include="img\slides\camera\slide2\img1.jpg" />
+    <Content Include="img\slides\camera\slide3\browsers.png" />
+    <Content Include="img\slides\camera\slide3\iMac.png" />
+    <Content Include="img\slides\parallax\1.png" />
+    <Content Include="img\slides\parallax\2.png" />
+    <Content Include="img\slides\parallax\bg.jpg" />
     <Content Include="Scripts\CustomJs\custom.js" />
     <Content Include="Scripts\ThirdPartyJs\animate.js" />
     <Content Include="Scripts\ThirdPartyJs\bootstrap.js" />
@@ -163,13 +332,15 @@
     <Content Include="fonts\fontawesome\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome\FontAwesome.otf" />
-    <Content Include="Content\fonts\FontAwesome.otf" />
-    <Content Include="Content\fonts\fontawesome-webfont.eot" />
-    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome\FontAwesome.otf" />
+    <Content Include="Content\fonts\fontawesome\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome\fontawesome-webfont.woff" />
     <None Include="Scripts\ThirdPartyJs\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\ThirdPartyJs\camera\camera.js" />
     <Content Include="Scripts\ThirdPartyJs\camera\setting.js" />
+    <Content Include="Scripts\ThirdPartyJs\client-slider.js" />
+    <Content Include="Scripts\ThirdPartyJs\flickity.pkgd.min.js" />
     <Content Include="Scripts\ThirdPartyJs\google-code-prettify\prettify.css" />
     <Content Include="Scripts\ThirdPartyJs\google-code-prettify\prettify.js" />
     <Content Include="Scripts\ThirdPartyJs\inview.js" />
@@ -181,12 +352,14 @@
     <Content Include="Scripts\ThirdPartyJs\jquery.cslider.js" />
     <Content Include="Scripts\ThirdPartyJs\jquery.easing.1.3.js" />
     <Content Include="Scripts\ThirdPartyJs\jquery.flexslider.js" />
+    <Content Include="Scripts\ThirdPartyJs\jquery.js" />
     <Content Include="Scripts\ThirdPartyJs\jquery.prettyPhoto.js" />
     <Content Include="Scripts\ThirdPartyJs\jquery.validate.js" />
     <Content Include="Scripts\ThirdPartyJs\jquery.validate.min.js" />
     <Content Include="Scripts\ThirdPartyJs\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\ThirdPartyJs\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\ThirdPartyJs\modernizr-2.8.3.js" />
+    <Content Include="Scripts\ThirdPartyJs\modernizr.custom.js" />
     <Content Include="Scripts\ThirdPartyJs\portfolio\jquery.quicksand.js" />
     <Content Include="Scripts\ThirdPartyJs\portfolio\setting.js" />
     <Content Include="Scripts\ThirdPartyJs\slick.min.js" />
@@ -205,13 +378,43 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Gallery.cshtml" />
+    <Content Include="Views\Home\Ourprojects.cshtml" />
+    <Content Include="Views\Home\Projectdetails.cshtml" />
+    <Content Include="Views\Home\Services.cshtml" />
+    <Content Include="Views\Partial\_ourclients.cshtml" />
+    <Content Include="Views\Partial\_specialpriceadds.cshtml" />
+    <Content Include="Views\Home\Clients.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TW.BusinessLayer\TW.BusinessLayer.csproj">
+      <Project>{b8feb4f5-5e30-4d53-bf46-443f1fc37ff2}</Project>
+      <Name>TW.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TW.DataLayerSql\TW.DataLayerSql.csproj">
+      <Project>{b33e5ddf-4436-4e65-a4cc-e7c51e61417a}</Project>
+      <Name>TW.DataLayerSql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TW.DataLayer\TW.DataLayer.csproj">
+      <Project>{4490ffd2-37c4-4376-9130-c6e2fbef4e2f}</Project>
+      <Name>TW.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TW.Models\TW.Models.csproj">
+      <Project>{2a8206a8-a649-4b4f-92b8-c08982111f12}</Project>
+      <Name>TW.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TW.Utility\TW.Utility.csproj">
+      <Project>{d0c34667-bbbe-43af-8788-a394904981e2}</Project>
+      <Name>TW.Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

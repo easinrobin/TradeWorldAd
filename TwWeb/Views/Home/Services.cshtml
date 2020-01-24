@@ -1,0 +1,53 @@
+﻿@model TW.Models.PublicViewModel
+@{
+    ViewBag.Title = "Services";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .service-box {
+        margin-bottom: 30px;
+    }
+</style>
+<section id="inner-headline">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="inner-heading">
+                    <ul class="breadcrumb">
+                        <li><a href="/Home/">Home</a> <i class="icon-angle-right"></i></li>
+                        <li class="active">Services</li>
+                    </ul>
+                    <h2>Our Services</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="service-content">
+    <div class="container">
+        <div class="row">
+            @foreach (var data in Model.OurServices)
+            {
+                //var imagePath = "" + data.ImageUrl;
+                <div class="span4">
+                    <div class="service-box aligncenter flyIn">
+                        <h5>@Html.Raw(data.ServiceName)</h5>
+                        <div class="icon">
+                            <img src="@data.ImageUrl" alt="" />
+                        </div>
+                        <p>
+                            @Html.Raw(data.Description)
+                        </p>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>
+
+@Html.Partial("~/Views/Partial/_specialpriceadds.cshtml", Model)
+@Html.Partial("~/Views/Partial/_ourclients.cshtml", Model)
+
+

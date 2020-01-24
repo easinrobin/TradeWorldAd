@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>b33e5ddf-4436-4e65-a4cc-e7c51e61417a</ProjectGuid>
+    <ProjectGuid>{B33E5DDF-4436-4E65-A4CC-E7C51E61417A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TW.DataLayerSql</RootNamespace>
@@ -31,24 +31,43 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CommonUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlClientProvider.cs" />
+    <Compile Include="SqlCompanySettingsProvider.cs" />
+    <Compile Include="SqlFeedbackProvider.cs" />
+    <Compile Include="SqlHomeProvider.cs" />
+    <Compile Include="SqlMachinesProvider.cs" />
+    <Compile Include="SqlProjectCategoryProvider.cs" />
+    <Compile Include="SqlProjectGalleryProvider.cs" />
+    <Compile Include="SqlProjectProvider.cs" />
+    <Compile Include="SqlServiceProvider.cs" />
+    <Compile Include="SqlUserProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TW.DataLayer\TW.DataLayer.csproj">
+      <Project>{4490ffd2-37c4-4376-9130-c6e2fbef4e2f}</Project>
+      <Name>TW.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TW.Models\TW.Models.csproj">
+      <Project>{2a8206a8-a649-4b4f-92b8-c08982111f12}</Project>
+      <Name>TW.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TW.Utility\TW.Utility.csproj">
+      <Project>{d0c34667-bbbe-43af-8788-a394904981e2}</Project>
+      <Name>TW.Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>
