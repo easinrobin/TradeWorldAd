@@ -25,15 +25,20 @@ ul.topmenu li a:hover {
 .navbar .nav > .active > a,
 .navbar .nav > .active > a:hover,
 .navbar .nav > .active > a:focus {
-  background: #EF4324;
+    background: #2D313D;
+}
+
+.navbar .nav > li > a:hover, 
+.navbar .nav > li > a:focus {
+    background: #2D313D;
 }
 
 header ul.nav .dropdown-menu li > a:hover,
 .dropdown-menu li > a:focus,
-.dropdown-submenu:hover > a, 
+.dropdown-submenu:hover > a,
 .dropdown-menu .active > a,
 .dropdown-menu .active > a:hover {
-  background: #EF4324;
+    background: #EF4324;
 }
 
 /* slider */

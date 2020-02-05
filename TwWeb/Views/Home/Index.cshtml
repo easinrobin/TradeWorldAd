@@ -14,8 +14,16 @@
         }
         @foreach (var banner in Model.Banners.FindAll(x => x.IsActive == true).ToList())
         {
-            //var imagepath = Request.Url.Scheme + "://" + Request.Url.Authority + banner.ImageUrl;
-            var imagepath = "../img/slides/camera/slide3/iMac.png";
+            string imagepath;
+            if (banner.ImageUrl == null)
+            {
+                imagepath = null;
+            }
+            else
+            {
+                imagepath = "http://twadmin.thebyteheart.com/" + banner.ImageUrl;
+            }
+
             if (i == 1)
             {
                 <div data-src="../img/slides/camera/slide2/img1.jpg">
@@ -113,13 +121,14 @@
             }
             @foreach (var data in Model.OurMachines)
             {
+                var imagepath = "http://twadmin.thebyteheart.com/" + data.ImageUrl;
                 if (j == 1)
                 {
                     <div class="span4">
-                        <div class="service-box aligncenter flyLeft">
+                        <div class="service-box machine-box aligncenter flyIn">
                             <h5>@Html.Raw(data.MachineName)</h5>
                             <div class="icon">
-                                <img src="@data.ImageUrl" alt="" />
+                                <img src="@imagepath" alt="" />
                             </div>
                             <p>
                                 @Html.Raw(data.Description)
@@ -130,10 +139,10 @@
                 else if (j == 2)
                 {
                     <div class="span4">
-                        <div class="service-box aligncenter flyIn">
+                        <div class="service-box machine-box aligncenter flyIn">
                             <h5>@Html.Raw(data.MachineName)</h5>
                             <div class="icon">
-                                <img src="@data.ImageUrl" alt="" />
+                                <img src="@imagepath" alt="" />
                             </div>
 
                             <p>
@@ -146,10 +155,10 @@
                 else
                 {
                     <div class="span4">
-                        <div class="service-box aligncenter flyRight">
+                        <div class="service-box machine-box aligncenter flyIn">
                             <h5>@Html.Raw(data.MachineName)</h5>
                             <div class="icon">
-                                <img src="@data.ImageUrl" alt="" />
+                                <img src="@imagepath" alt="" />
                             </div>
 
                             <p>
@@ -188,6 +197,16 @@
     </div>
 </section>
 
+<section id="speech">
+    <div class="container">
+        <div class="row">
+            <div class="span12 text-center">
+                <img src="/img/Speech.png" width="550" />
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <section id="works">
     <div class="container">
@@ -197,12 +216,13 @@
                 <div class="row">
                     @foreach (var cat in Model.ProjectCategories)
                     {
+                        var imagepath = "http://twadmin.thebyteheart.com/" + cat.ImageUrl;
                         <div class="span4 box-project">
                             <a href="/Home/Projectdetails/@cat.Id">
-                                <div class="service-box aligncenter flyIn">
+                                <div class="service-box project-box aligncenter flyIn">
                                     <h5>@Html.Raw(cat.Name)</h5>
                                     <div class="icon">
-                                        <img src="@cat.ImageUrl" alt="" />
+                                        <img src="@imagepath" alt="" />
                                     </div>
                                 </div>
                             </a>

@@ -28,9 +28,9 @@
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#project" role="tab">Project</a>
                 </li>
-                <li class="nav-item">
+                @*<li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#category" role="tab">Category</a>
-                </li>
+                </li>*@
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#gallery" role="tab">Gallery</a>
                 </li>
@@ -43,9 +43,9 @@
                     <div class="tab-pane active fade show" id="project" role="tabpanel">
                         @Html.Partial("~/Views/Projects/Partial/_Project.cshtml", Model)
                     </div>
-                    <div class="tab-pane" id="category" role="tabpanel">
+                    @*<div class="tab-pane" id="category" role="tabpanel">
                         @Html.Partial("~/Views/Projects/Partial/_ProjectCategory.cshtml", Model)
-                    </div>
+                    </div>*@
                     <div class="tab-pane " id="gallery" role="tabpanel">
                         @Html.Partial("~/Views/Projects/Partial/_Gallery.cshtml", Model)
                     </div>

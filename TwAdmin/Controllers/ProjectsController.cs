@@ -91,8 +91,9 @@ namespace TwAdmin.Controllers
 
             if (projectId > 0)
             {
-                av.ProjectCategory.ImageUrl = _UploadSingleImage(av, image);
-                var categoryId = ProjectManager.InsertProjectCategory(av.ProjectCategory);
+                //av.ProjectCategory.ImageUrl = _UploadSingleImage(av, image);
+                //av.ProjectCategory.IsActive = true;
+                //var categoryId = ProjectManager.InsertProjectCategory(av.ProjectCategory);
 
                 _Gallery(projectId, av);
             }
@@ -178,6 +179,7 @@ namespace TwAdmin.Controllers
                     {
                         ImageUrl = pathUrl,
                         ProjectId = projectId,
+                        IsActive = true, 
                         CreatedBy = "Admin",
                         CreatedDate = DateTime.Now
                     };

@@ -321,6 +321,8 @@
     <Content Include="img\slides\parallax\1.png" />
     <Content Include="img\slides\parallax\2.png" />
     <Content Include="img\slides\parallax\bg.jpg" />
+    <Content Include="img\Speech.jpg" />
+    <Content Include="img\Speech.png" />
     <Content Include="Scripts\CustomJs\custom.js" />
     <Content Include="Scripts\ThirdPartyJs\animate.js" />
     <Content Include="Scripts\ThirdPartyJs\bootstrap.js" />

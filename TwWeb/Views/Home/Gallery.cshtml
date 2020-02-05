@@ -39,15 +39,15 @@
             <div class="grid cs-style-4">
                 @foreach (var data in Model.ProjectGalleries)
                 {
-                    //var imagePath = "" + data.ImageUrl;
+                    var imagePath = "http://twadmin.thebyteheart.com/" + data.ImageUrl;
                     <div class="span6">
                         <div class="item">
                             <figure>
-                                <div><img src="@data.ImageUrl" alt=""/></div>
+                                <div><img src="@imagePath" alt=""/></div>
                                 <figcaption>
                                     <div>
                                         <span>
-                                            <a href="@data.ImageUrl" data-pretty="prettyPhoto[gallery1]" title="">
+                                            <a href="@imagePath" data-pretty="prettyPhoto[gallery1]" title="">
                                                 <i class="icon-plus icon-circled icon-bglight icon-2x"></i>
                                             </a>
                                         </span>
