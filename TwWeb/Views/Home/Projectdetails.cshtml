@@ -25,13 +25,13 @@
         <div class="row">
             @foreach (var data in Model.Projects)
             {
-                //var imagePath = "" + data.ImageUrl;
+                var imagepath = "http://twadmin.thebyteheart.com/" + @data.ImageUrl;
                 <div class="span6 box-project">
                     <a href="/Home/Gallery/@data.Id">
                         <div class="service-box aligncenter flyIn">
                             <h5>@Html.Raw(data.ProjectName)</h5>
                             <div class="icon">
-                                <img src="@data.ImageUrl" alt="" />
+                                <img src="@imagepath" alt="" />
                             </div>
                         </div>
                     </a>

@@ -29,12 +29,12 @@
         <div class="row">
             @foreach (var data in Model.OurServices)
             {
-                //var imagePath = "" + data.ImageUrl;
+                var imagepath = "http://twadmin.thebyteheart.com/" + @data.ImageUrl;
                 <div class="span4">
-                    <div class="service-box aligncenter flyIn">
+                    <div class="service-box service-page-box aligncenter flyIn">
                         <h5>@Html.Raw(data.ServiceName)</h5>
                         <div class="icon">
-                            <img src="@data.ImageUrl" alt="" />
+                            <img src="@imagepath" alt="" />
                         </div>
                         <p>
                             @Html.Raw(data.Description)

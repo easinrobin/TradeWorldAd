@@ -24,7 +24,6 @@
 <div class="card new-contact">
     @using (Html.BeginForm("InsertBanner", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
-        @Html.RenderFlashMessages()
         @Html.HiddenFor(model => model.Banner.Id)
         @Html.HiddenFor(model => model.Banner.ImageUrl)
         //var imagepath = "http://ss.byteheart.com/" + Model.Banner.ImageUrl;

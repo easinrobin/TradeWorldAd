@@ -7,12 +7,11 @@
             <div class="slider-inner">
                 @foreach (var client in Model.OurClients)
                 {
-                    //var imagePath = "" + client.ImageUrl;
-                    <div><img src="@client.ImageUrl" alt="bengal meat" /></div>
+                    var imagepath = "http://twadmin.thebyteheart.com/" + @client.ImageUrl;
+                    <div><img src="@imagepath" alt="bengal meat" /></div>
                 }
                
             </div>
-
         </div>
     </div>
 </section>

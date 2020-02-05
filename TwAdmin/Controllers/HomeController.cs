@@ -17,7 +17,7 @@ namespace TwAdmin.Controllers
             return View();
         }
 
-        public ActionResult About(AdminViewModel av, long Id=1)
+        public ActionResult About(AdminViewModel av, long Id = 1)
         {
             av.AboutUs = HomeManager.GetAboutUs(Id);
             return View(av);
@@ -31,6 +31,9 @@ namespace TwAdmin.Controllers
             {
                 av.AboutUs.ImageUrl = _UploadSingleImage(av, image);
             }
+
+            av.AboutUs.CreatedBy = "Admin";
+            av.AboutUs.CreatedDate = DateTime.Now;
             HomeManager.UpdateAbout(av.AboutUs);
             return RedirectToAction("About");
         }
@@ -44,11 +47,11 @@ namespace TwAdmin.Controllers
         public ActionResult InsertBanner()
         {
             AdminViewModel av = new AdminViewModel();
-            av.Banner=new Banner();
+            av.Banner = new Banner();
             return View(av);
         }
 
-        public ActionResult UpdateBanner(AdminViewModel av,long Id)
+        public ActionResult UpdateBanner(AdminViewModel av, long Id)
         {
             if (Id > 0)
             {
@@ -76,6 +79,10 @@ namespace TwAdmin.Controllers
                 {
                     av.Banner.ImageUrl = _UploadSingleImage(av, image);
                 }
+
+                av.Banner.IsActive = true;
+                av.Banner.CreatedBy = "Admin";
+                av.Banner.CreatedDate = DateTime.Now;
                 HomeManager.UpdateBanner(av.Banner);
             }
             else
@@ -85,14 +92,12 @@ namespace TwAdmin.Controllers
                     if (av.File != null)
                     {
                         av.Banner.ImageUrl = _UploadSingleImage(av, image);
-                        av.Banner.IsActive = true;
-                        HomeManager.InsertBanner(av.Banner);
                     }
-                    else
-                    {
-                        FlashMessage.Danger("Image Required");
-                        return View(av);
-                    }
+
+                    av.Banner.IsActive = true;
+                    av.Banner.CreatedBy = "Admin";
+                    av.Banner.CreatedDate = DateTime.Now;
+                    HomeManager.InsertBanner(av.Banner);
                 }
             }
 

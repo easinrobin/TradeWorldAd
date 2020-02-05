@@ -19,14 +19,6 @@
 </head>
 <body data-sa-theme="4">
     <main class="main">
-        @*<div class="page-loader">
-                <div class="page-loader__spinner">
-                    <svg viewBox="25 25 50 50">
-                        <circle cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
-                    </svg>
-                </div>
-            </div>*@
-
         <header class="header">
             <div class="navigation-trigger hidden-xl-up" data-sa-action="aside-open" data-sa-target=".sidebar">
                 <i class="zmdi zmdi-menu"></i>
@@ -67,12 +59,6 @@
                                 }
                             </div>
                     </div>
-
-                    @*<div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">View Profile</a>
-                            <a class="dropdown-item" href="#">Settings</a>
-                            <a class="dropdown-item" href="#">Logout</a>
-                        </div>*@
                 </div>
 
                 <ul class="navigation">
@@ -102,37 +88,11 @@
 
             @RenderBody()
             <footer class="footer hidden-xs-down">
-                <p>&copy; @DateTime.Now.Year <a href="http://byteheart.com/" target="_blank">ByteHeart</a>. Trademarks and brands are the property of their respective owners.</p>
+                <p>&copy; @DateTime.Now.Year <a href="http://byteheart.com/" target="_blank">Trade World</a>. Trademarks and brands are the property of their respective owners.</p>
+                <p>Made with <span style="color: red">❤️</span> By <a href="http://byteheart.com/" target="_blank">ByteHeart</a></p>
             </footer>
         </section>
     </main>
-
-    @*@Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/popper")
-        @Scripts.Render("~/bundles/bootstrap")
-        @Scripts.Render("~/bundles/jqueryval")
-        @Scripts.Render("~/bundles/jqueryvalUnobtrusive")
-        @Scripts.Render("~/bundles/scrollbar")
-        @Scripts.Render("~/bundles/jquery-scrollLock")
-
-        @Scripts.Render("~/bundles/moment")
-        @Scripts.Render("~/bundles/dataTables")
-        @Scripts.Render("~/bundles/dataTables-buttons")
-        @Scripts.Render("~/bundles/buttons-print")
-        @Scripts.Render("~/bundles/buttons-html5")
-
-        @Scripts.Render("~/bundles/dropzone")
-        @Scripts.Render("~/bundles/flatpickr")
-
-        @Scripts.Render("~/bundles/lightgallery")
-        @Scripts.Render("~/bundles/select2")
-        @Scripts.Render("~/bundles/sweetalert2")
-        @Scripts.Render("~/bundles/trumbowyg")
-        @Scripts.Render("~/bundles/appMin")
-        @Scripts.Render("~/bundles/demo")*@
-    @*<script>
-            $('.dropdown').dropdown();
-        </script>*@
 
     <script src="~/Scripts/jquery-2.1.4.js"></script>
     <script src="~/Scripts/popper.min.js"></script>
@@ -173,6 +133,18 @@
         });
 
         $('#wysiwyg-editor').trumbowyg();
+
+        $(function () {
+            // this will get the full URL at the address bar
+            var url = window.location.href;
+            // passes on every "a" tag 
+            $(".navigation a").each(function () {
+                // checks if its the same on the address bar
+                if (url == (this.href)) {
+                    $(this).closest("li").addClass("navigation__active");
+                }
+            });
+        });
     </script>
 </body>
 </html>

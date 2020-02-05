@@ -46,6 +46,7 @@ namespace TwAdmin.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult InsertService(AdminViewModel av, HttpPostedFileBase image)
         {
             if (av.Service != null && av.Service.Id > 0)

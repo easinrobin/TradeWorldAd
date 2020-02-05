@@ -57,6 +57,10 @@ namespace TwAdmin.Controllers
                 {
                     _UploadSingleImage(av, image);
                 }
+
+                av.Machines.IsActive = true;
+                av.Machines.CreatedBy = "Admin";
+                av.Machines.CreatedDate = DateTime.Now;
                 MachineManager.UpdateMachine(av.Machines);
             }
             else
@@ -65,6 +69,8 @@ namespace TwAdmin.Controllers
                 {
                     _UploadSingleImage(av, image);
                     av.Machines.IsActive = true;
+                    av.Machines.CreatedBy = "Admin";
+                    av.Machines.CreatedDate = DateTime.Now;
                     MachineManager.InsertMachine(av.Machines);
                 }
                 else

@@ -55,6 +55,10 @@ namespace TwAdmin.Controllers
                 {
                     _UploadSingleImage(av, image);
                 }
+
+                av.Clients.IsActive = true;
+                av.Clients.CreatedBy = "Admin";
+                av.Clients.CreatedDate = DateTime.Now;
                 ClientManager.UpdateClient(av.Clients);
             }
             else
@@ -63,6 +67,8 @@ namespace TwAdmin.Controllers
                 {
                     _UploadSingleImage(av, image);
                     av.Clients.IsActive = true;
+                    av.Clients.CreatedBy = "Admin";
+                    av.Clients.CreatedDate = DateTime.Now;
                     ClientManager.InsertClient(av.Clients);
                 }
                 else
