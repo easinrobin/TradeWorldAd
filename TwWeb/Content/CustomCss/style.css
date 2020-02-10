@@ -307,6 +307,7 @@ header ul.nav li {
 
     .navbar .nav > li > a:hover, .navbar .nav > li > a:focus {
         padding: 30px 10px 30px 10px;
+        border-radius: 0 !important;
     }
 
 .navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
@@ -2496,7 +2497,7 @@ ul.the-icons {
     }
 
     ul.social-network {
-        float: none;
+        float: right;
     }
 
     nav ul li {
@@ -2514,7 +2515,7 @@ ul.the-icons {
         display: block;
         width: 100%;
         float: left;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         color: #111;
         margin-right: 20px;
         line-height: 30px;
@@ -2998,6 +2999,22 @@ ul.the-icons {
     .social-network-footer {
         margin: 0;
     }
+
+    .inline-top {
+        display: flex;
+    }
+
+    header .top {
+        height: 30px;
+    }
+
+    header .top p.topcontact {
+        float: left;
+    }
+
+    header .logo img {
+        margin: 10px 0 0;
+    }
 }
 
 div.pp_default .pp_description {
@@ -3087,4 +3104,22 @@ div.pp_default .pp_description {
 
 .project-box h5 {
     height: 40px
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #e95a34;
+    transition: 0.6s ease-out;
+    /*height: 100px;*/
+}
+
+.map-loc iframe {
+    width: 100% !important;
+    margin-bottom: 50px;
+}
+
+.icon img {
+    height: 250px !important;
 }

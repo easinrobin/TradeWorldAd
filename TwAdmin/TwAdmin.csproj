@@ -160,7 +160,6 @@
     <Content Include="Content\VendorCss\select2.min.css" />
     <Content Include="Content\VendorCss\sweetalert2.min.css" />
     <Content Include="Content\VendorCss\trumbowyg.min.css" />
-    <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\nunito\nunito-bold.svg" />
     <Content Include="fonts\nunito\nunito-regular.svg" />
@@ -240,6 +239,7 @@
     <Content Include="Scripts\sweetalert2.min.js" />
     <Content Include="Scripts\trumbowyg.min.js" />
     <Content Include="Scripts\ui\icons.svg" />
+    <Content Include="twaicon.ico" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

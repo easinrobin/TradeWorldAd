@@ -148,7 +148,6 @@
     <Content Include="Content\ThirdPartyCss\shortcodes.css" />
     <Content Include="Content\ThirdPartyCss\slick-theme.css" />
     <Content Include="Content\ThirdPartyCss\slick.css" />
-    <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="img\AboutUs.jpg" />
@@ -366,6 +365,7 @@
     <Content Include="Scripts\ThirdPartyJs\portfolio\setting.js" />
     <Content Include="Scripts\ThirdPartyJs\slick.min.js" />
     <Content Include="Scripts\ThirdPartyJs\toucheffects.js" />
+    <Content Include="twaicon.ico" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

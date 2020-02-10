@@ -17,6 +17,7 @@
     <title>@ViewBag.Title - @companySetting.CompanyName | Creative Digital Sign Manufacturer & Supplier</title>
     <meta name="description" content="tradeworld advertising, creative digital sign manufacturer & supplier" />
     <meta name="title" content="trade world advertising">
+    <link rel="icon" href="@Url.Content("~/twaicon.ico")" />
     <link href="https://fonts.googleapis.com/css?family=Handlee|Open+Sans:300,400,600,700,800" rel="stylesheet">
     @Styles.Render("~/Content/ThirdPartyCss/bootstrapcss")
     @Styles.Render("~/Content/ThirdPartyCss/bootstrap-responsive")
@@ -43,9 +44,9 @@
         <header>
             <div class="top">
                 <div class="container">
-                    <div class="row">
+                    <div class="row inline-top">
                         <div class="span6">
-                            <p class="topcontact"><i class="icon-phone"></i> @Html.Raw(companySetting.MainContactNo)</p>
+                            <p class="topcontact"><i class="icon-phone"></i> @Html.Raw(companySetting.MainContactNo) | <i class="icon-phone"></i> @Html.Raw(companySetting.ContactNo)</p>
                         </div>
                         <div class="span6">
 
@@ -66,31 +67,33 @@
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="row nomargin">
-                    <div class="span4">
-                        <div class="logo">
-                            <a href="/Home/"><img src="@imagepath" alt="" /></a>
-                        </div>
-                    </div>
-                    <div class="span8">
-                        <div class="navbar navbar-static-top">
-                            <div class="navigation">
-                                <nav>
-                                    <ul class="nav topnav">
-                                        <li>
-                                            <a href="/Home/Index"> Home </a>
-                                        </li>
-                                        <li><a href="/Home/About">About us</a></li>
-                                        <li><a href="/Home/Services">Service</a></li>
-                                        <li><a href="/Home/Ourprojects">Our Projects</a></li>
-                                        <li><a href="/Home/Clients">Our Clients</a></li>
-                                        <li><a href="/Home/Contact">Contact</a></li>
-
-                                    </ul>
-                                </nav>
+            <div id="bottom-nav">
+                <div class="container">
+                    <div class="row nomargin">
+                        <div class="span4">
+                            <div class="logo">
+                                <a href="/Home/"><img src="@imagepath" alt="" /></a>
                             </div>
-                            <!-- end navigation -->
+                        </div>
+                        <div class="span8">
+                            <div class="navbar navbar-static-top">
+                                <div class="navigation">
+                                    <nav>
+                                        <ul class="nav topnav">
+                                            <li>
+                                                <a href="/Home/Index"> Home </a>
+                                            </li>
+                                            <li><a href="/Home/About">About us</a></li>
+                                            <li><a href="/Home/Services">Service</a></li>
+                                            <li><a href="/Home/Ourprojects">Our Projects</a></li>
+                                            <li><a href="/Home/Clients">Our Clients</a></li>
+                                            <li><a href="/Home/Contact">Contact</a></li>
+
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <!-- end navigation -->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -123,10 +126,11 @@
                             <h5 class="widgetheading">Get in touch</h5>
                             <address>
                                 <strong>@Html.Raw(companySetting.CompanyName)</strong><br>
-                              @Html.Raw(companySetting.CompanyAddress)
+                                @Html.Raw(companySetting.CompanyAddress)
                             </address>
                             <p>
                                 <i class="icon-phone"></i>  @Html.Raw(companySetting.MainContactNo)<br>
+                                <i class="icon-phone"></i>  @Html.Raw(companySetting.ContactNo)<br>
                                 <i class="icon-envelope-alt"></i>  @Html.Raw(companySetting.Email_1)<br>
                                 <i class="icon-envelope-alt"></i>  @Html.Raw(companySetting.Email_2)
                             </p>
@@ -226,17 +230,32 @@
 
         });
 
-        $(function(){
+        $(function () {
             // this will get the full URL at the address bar
-            var url = window.location.href; 
-            // passes on every "a" tag 
-            $(".nav a").each(function() {
+            var url = window.location.href;
+            // passes on every "a" tag
+            $(".nav a").each(function () {
                 // checks if its the same on the address bar
-                if(url == (this.href)) { 
+                if (url == (this.href)) {
                     $(this).closest("li").addClass("active");
                 }
             });
         });
+    </script>
+
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        var navbar = document.getElementById("bottom-nav");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky");
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
     </script>
 </body>
 </html>
