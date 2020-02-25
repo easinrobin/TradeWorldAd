@@ -124,6 +124,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\FeedbackController.cs" />
@@ -272,6 +273,8 @@
     <Content Include="Views\Projects\UpdateProject.cshtml" />
     <Content Include="Views\Projects\GalleryList.cshtml" />
     <Content Include="Views\Projects\CreateGallery.cshtml" />
+    <Content Include="Views\Category\InsertCategory.cshtml" />
+    <Content Include="Views\Category\Categories.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

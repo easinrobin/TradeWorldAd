@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace TW.Models
 {
@@ -67,5 +69,15 @@ namespace TW.Models
         [Display(Name = "Twitter Page")]
         [Required(ErrorMessage = "Twitter Page required")]
         public string TwitterPageUrl { get; set; }
+
+        [Display(Name = "Owner Image")]
+        [Required(ErrorMessage = "Image required")]
+        public string ImgUrl { get; set; }
+    }
+
+    [NotMapped]
+    public class OwnerImage
+    {
+        public HttpPostedFileBase File { get; set; }
     }
 }

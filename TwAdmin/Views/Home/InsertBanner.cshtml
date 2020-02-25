@@ -26,6 +26,7 @@
     {
         @Html.HiddenFor(model => model.Banner.Id)
         @Html.HiddenFor(model => model.Banner.ImageUrl)
+        @Html.HiddenFor(model => model.Banner.SliderBgImgUrl)
         //var imagepath = "http://ss.byteheart.com/" + Model.Banner.ImageUrl;
         <div class="new-contact__header">
 
@@ -52,6 +53,20 @@
                         <label>Short Description</label>
                         @Html.TextBoxFor(model => model.Banner.ShortDescription, new { @class = "form-control", placeholder = "Write a short description" })
                         @Html.ValidationMessageFor(model => model.Banner.ShortDescription, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Banner.SliderBgImgUrl, new { @class = "card-body__title" })
+                    <div class="card">
+                        <div class="card-body">
+                            <span class="control-label col-md-2">Upload Images:</span>
+                            <div class="col-md-10">
+                                @*<input type="file" name="files" id="file" class="btn btn-success" />*@
+                                @Html.TextBoxFor(model => model.SliderBgImgUrl.File, new { type = "file", id = "file" })
+                                @Html.ValidationMessageFor(model => model.SliderBgImgUrl.File, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

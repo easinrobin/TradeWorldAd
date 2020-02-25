@@ -33,6 +33,7 @@
     @Styles.Render("~/Content/ThirdPartyCss/cslider")
     @Styles.Render("~/Content/ThirdPartyCss/overwrite")
     @Styles.Render("~/Content/ThirdPartyCss/shortcodes")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
     @Scripts.Render("~/bundles/ThirdPartyJs/modernizr")
     @Styles.Render("~/Content/CustomCss/style")
     @Styles.Render("~/Content/ThirdPartyCss/defaultColor")
@@ -192,7 +193,7 @@
     @Scripts.Render("~/bundles/CustomJs/customJs")
     @Scripts.Render("~/bundles/ThirdPartyJs/clientslider")
     @Scripts.Render("~/bundles/ThirdPartyJs/slick")
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
 
     @Scripts.Render("~/bundles/ThirdPartyJs/jqueryval")
     @Scripts.Render("~/bundles/ThirdPartyJs/jqueryvalUnobtrusive")
@@ -241,8 +242,11 @@
                 }
             });
         });
-    </script>
 
+    </script>
+    <script>
+        baguetteBox.run('.tz-gallery');
+    </script>
     <script>
         window.onscroll = function () { myFunction() };
 

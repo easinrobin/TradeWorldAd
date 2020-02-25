@@ -6,7 +6,6 @@ using System.Web;
 using System.Web.Mvc;
 using TW.BusinessLayer;
 using TW.Models;
-using Vereyon.Web;
 
 namespace TwAdmin.Controllers
 {
@@ -71,6 +70,7 @@ namespace TwAdmin.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult InsertBanner(AdminViewModel av, HttpPostedFileBase image)
         {
             if (av.Banner != null && av.Banner.Id > 0)
@@ -78,6 +78,10 @@ namespace TwAdmin.Controllers
                 if (av.File != null)
                 {
                     av.Banner.ImageUrl = _UploadSingleImage(av, image);
+                }
+                if (av.SliderBgImgUrl.File != null)
+                {
+                    av.Banner.SliderBgImgUrl = _UploadSliderImg(av, image);
                 }
 
                 av.Banner.IsActive = true;
@@ -92,7 +96,10 @@ namespace TwAdmin.Controllers
                     if (av.File != null)
                     {
                         av.Banner.ImageUrl = _UploadSingleImage(av, image);
+                        av.Banner.SliderBgImgUrl = _UploadSliderImg(av, image);
                     }
+
+                    
 
                     av.Banner.IsActive = true;
                     av.Banner.CreatedBy = "Admin";
@@ -104,11 +111,12 @@ namespace TwAdmin.Controllers
             return RedirectToAction("Banner");
         }
 
-        private void _UploadImage(AdminViewModel adminVwModel, HttpPostedFileBase images)
+        private string _UploadImage(AdminViewModel adminVwModel, HttpPostedFileBase images)
         {
+            string pathUrl = "";
             foreach (var file in adminVwModel.Files.Take(1))
             {
-                string pathUrl = "";
+                
 
                 if (file.ContentLength > 0)
                 {
@@ -120,14 +128,29 @@ namespace TwAdmin.Controllers
                     savefile = Path.Combine(savepath, filename);
                     file.SaveAs(savefile);
                     pathUrl = "/img/Images/" + filename;
-                    adminVwModel.Banner.ImageUrl = pathUrl;
                 }
             }
+            return pathUrl;
         }
 
         private string _UploadSingleImage(AdminViewModel adminVwModel, HttpPostedFileBase images)
         {
             var file = adminVwModel.File;
+            string pathUrl = "";
+            string savepath, savefile;
+            var filename = Path.GetFileName(Guid.NewGuid() + file.FileName);
+            savepath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "img/Images/");
+            if (!Directory.Exists(savepath))
+                Directory.CreateDirectory(savepath);
+            savefile = Path.Combine(savepath, filename);
+            file.SaveAs(savefile);
+            pathUrl = "/img/Images/" + filename;
+            return pathUrl;
+        }
+
+        private string _UploadSliderImg(AdminViewModel adminVwModel, HttpPostedFileBase images)
+        {
+            var file = adminVwModel.SliderBgImgUrl.File;
             string pathUrl = "";
             string savepath, savefile;
             var filename = Path.GetFileName(Guid.NewGuid() + file.FileName);

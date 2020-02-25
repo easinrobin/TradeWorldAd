@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TW.Models
 {
@@ -22,5 +18,11 @@ namespace TW.Models
 
         [Display(Name = "Is Active")]
         public bool IsActive { get; set; }
+
+        [Display(Name = "Created By")]
+        public string CreatedBy { get; set; }
+
+        [Display(Name = "Created Date")]
+        public DateTime? CreatedDate { get; set; }
     }
 }

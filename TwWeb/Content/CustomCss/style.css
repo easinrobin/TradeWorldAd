@@ -43,11 +43,11 @@
 ==================================== */
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Arial', sans-serif !important;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.6em;
-    color: #656565;
+    color: #222222;
 }
 
 a {
@@ -531,7 +531,7 @@ select.selectmenu {
 #content {
     position: relative;
     background: #fff;
-    border-top: 1px solid #f2f2f2;
+    border-top: none;
     padding: 50px 0 0 0;
 }
 
@@ -3122,4 +3122,28 @@ div.pp_default .pp_description {
 
 .icon img {
     height: 250px !important;
+}
+
+div.pp_default .pp_content, div.light_rounded .pp_content{
+    background-color: transparent;
+}
+
+#pp_full_res {
+    border: 10px solid #fff;
+}
+
+.service-page-box {
+    height: 460px;
+}
+
+.camera_wrap img {
+    height: 430px !important;
+}
+
+.camera_wrap h2, .camera_wrap p {
+    color: #fff
+}
+
+.camera_overlayer {
+    background: rgba(0, 0, 0, 0.65) !important;
 }

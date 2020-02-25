@@ -22,6 +22,8 @@ namespace TW.Models
         public List<ProjectCategory> ProjectCategoryList { get; set; }
         public ProjectGallery ProjectGallery { get; set; }
         public List<ProjectGallery> ProjectGalleryList { get; set; }
+        public OwnerImage OwnerImage { get; set; }
+        public SliderBgImgUrl SliderBgImgUrl { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Image Required")]
         public IEnumerable<HttpPostedFileBase> Files { get; set; }
