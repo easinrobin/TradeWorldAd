@@ -3,16 +3,9 @@
     ViewBag.Title = "Projects";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<style>
-    #baguetteBox-overlay .full-image img {
-        border: 2px solid gainsboro;
-    }
 
-    #baguetteBox-overlay .full-image {
-        max-height: 95%;
-        max-width: 95%;
-    }
-</style>
+
+
 <section id="inner-headline">
     <div class="container">
         <div class="row">
@@ -41,56 +34,50 @@
     </div>
 </section>
 
-<section id="gallery-content">
-    <div class="container">
-        <div class="row">
+<section id="gallery-content ">
 
-            <div class="grid cs-style-4">
-                @*@foreach (var data in Model.ProjectGalleries)
-                    {
-                        var imagePath = "http://twadmin.thebyteheart.com/" + data.ImageUrl;
-                        <div class="span6">
-                            <div class="item">
-                                <figure>
-                                    <div><img src="@imagePath" alt=""/></div>
-                                    <figcaption>
-                                        <div>
-                                            <span>
-                                                <a href="@imagePath" data-pretty="prettyPhoto[gallery1]" title="">
-                                                    <i class="icon-plus icon-circled icon-bglight icon-2x"></i>
-                                                </a>
-                                            </span>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    }*@
+    <div class="container">
+        
+        <div class="row" id="tzcontent">
+            <div class="loader-wrapper">
+                <span class="loader"><span class="loader-inner"></span></span>
+            </div>
+
+            <div class="grid cs-style-4 ">
 
                 <div class="tz-gallery">
 
-                    <div class="row">
+                    <div class="row" id="imges">
                         @foreach (var data in Model.ProjectGalleries)
                         {
                             var imagePath = "http://twadmin.thebyteheart.com/" + data.ImageUrl;
                             <div class="span6">
+
+
                                 <div class="thumbnail">
                                     <a class="lightbox" href="@imagePath">
                                         <img src="@imagePath" alt="Bridge">
                                     </a>
-
                                 </div>
+
+
+
                             </div>
 
                         }
 
                     </div>
 
+
+
                 </div>
 
 
+
             </div>
+
         </div>
+
     </div>
 
 </section>
@@ -105,3 +92,4 @@
         </div>
     </div>
 </section>
+

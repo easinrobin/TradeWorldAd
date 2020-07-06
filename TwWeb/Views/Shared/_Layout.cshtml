@@ -209,23 +209,23 @@
                 dots: true,
                 arrows: false,
                 responsive: [{
-                    breakpoint: 768,
-                    settings: {
-                        arrows: false,
-                        centerMode: true,
-                        centerPadding: '40px',
-                        slidesToShow: 3
+                        breakpoint: 768,
+                        settings: {
+                            arrows: false,
+                            centerMode: true,
+                            centerPadding: '40px',
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            arrows: false,
+                            centerMode: true,
+                            centerPadding: '40px',
+                            slidesToShow: 1
+                        }
                     }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        arrows: false,
-                        centerMode: true,
-                        centerPadding: '40px',
-                        slidesToShow: 1
-                    }
-                }
                 ]
             });
 
@@ -243,23 +243,32 @@
             });
         });
 
+
     </script>
     <script>
         baguetteBox.run('.tz-gallery');
     </script>
-    <script>
-        window.onscroll = function () { myFunction() };
+<script>
+    window.onscroll = function () { myFunction() };
 
-        var navbar = document.getElementById("bottom-nav");
-        var sticky = navbar.offsetTop;
+    var navbar = document.getElementById("bottom-nav");
+    var sticky = navbar.offsetTop;
 
-        function myFunction() {
-            if (window.pageYOffset >= sticky) {
-                navbar.classList.add("sticky");
-            } else {
-                navbar.classList.remove("sticky");
-            }
+    function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky");
+        } else {
+            navbar.classList.remove("sticky");
         }
-    </script>
+    }
+</script>
+
+<script>
+    $(window).on("load",function(){
+        $(".loader-wrapper").fadeOut("slow");
+    });
+</script>
+
+
 </body>
 </html>
