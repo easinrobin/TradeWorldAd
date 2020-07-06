@@ -3147,3 +3147,14 @@ div.pp_default .pp_content, div.light_rounded .pp_content{
 .camera_overlayer {
     background: rgba(0, 0, 0, 0.65) !important;
 }
+
+    #baguetteBox-overlay .full-image img
+    {
+        border: 8px solid #ddd;
+    }
+
+    #baguetteBox-overlay .full-image {
+
+        max-height: 95%;
+        max-width: 95%;
+    }
