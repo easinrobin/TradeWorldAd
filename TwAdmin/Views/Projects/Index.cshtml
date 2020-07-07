@@ -1,4 +1,5 @@
-﻿@model TW.Models.AdminViewModel
+﻿@using TW.BusinessLayer
+@model TW.Models.AdminViewModel
 @{
     ViewBag.Title = "Index";
 }
@@ -20,6 +21,7 @@
                 <thead style="color: #ffaa00">
                     <tr>
                         <th>Name</th>
+                        <th>Category</th>
                         <th>Location</th>
                         <th>Architect Name</th>
                         <th>Image</th>
@@ -31,6 +33,7 @@
                     {
                         <tr>
                             <td>@item.ProjectName</td>
+                            <td>@Html.Raw(ProjectManager.GetProjectCategoryById(item.ProjectCategoryId).Name)</td>
                             <td>@item.ProjectLocation</td>
                             <td>@item.ArchitectName</td>
                             <td>

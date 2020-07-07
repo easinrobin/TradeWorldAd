@@ -28,6 +28,12 @@ namespace TW.DataLayerSql
         public static string GetAboutDetails = "sp_GetAboutUDetails";
         public static string UpdateAbout = "sp_UpdateAboutU";
 
+
+        // Our Clients Banner
+        public static string GetClientBannersDetails = "sp_GetClientBannersDetails";
+        public static string UpdateClientsBanner = "sp_UpdateClientsBanner";
+
+
         // Clients
         public static string GetAllClients = "sp_GetOurClient";
         public static string GetClientById = "sp_GetOurClientDetails";

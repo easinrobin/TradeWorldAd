@@ -9,6 +9,7 @@ namespace TW.Models
         public List<Banner> Banners { get; set; }
         public AboutUs AboutUs { get; set; }
         public OurClient Clients { get; set; }
+        public OurClientsBanner ClientsBanner { get; set; }
         public List<OurClient> OurClients { get; set; }
         public CompanySetting CompanySetting { get; set; }
         public List<OurMachine> OurMachines { get; set; }

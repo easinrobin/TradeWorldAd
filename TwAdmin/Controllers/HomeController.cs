@@ -22,19 +22,40 @@ namespace TwAdmin.Controllers
             return View(av);
         }
 
+        public ActionResult ClientsBanner(AdminViewModel av, long Id = 1)
+        {
+            av.ClientsBanner = HomeManager.GetClientsBanner(Id);
+            return View(av);
+        }
+
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult UpdateAbout(AdminViewModel av, HttpPostedFileBase image)
         {
             if (av.File != null)
             {
-                av.AboutUs.ImageUrl = _UploadSingleImage(av, image);
+                av.ClientsBanner.ImageUrl = _UploadSingleImage(av, image);
             }
 
             av.AboutUs.CreatedBy = "Admin";
             av.AboutUs.CreatedDate = DateTime.Now;
             HomeManager.UpdateAbout(av.AboutUs);
             return RedirectToAction("About");
+        }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult UpdateOurClientsBanner(AdminViewModel av, HttpPostedFileBase image)
+        {
+            if (av.File != null)
+            {
+                av.ClientsBanner.ImageUrl = _UploadSingleImage(av, image);
+            }
+
+            av.ClientsBanner.CreatedBy = "Admin";
+            av.ClientsBanner.CreatedDate = DateTime.Now;
+            HomeManager.UpdateClientsBanner(av.ClientsBanner);
+            return RedirectToAction("ClientsBanner");
         }
 
         public ActionResult Banner()

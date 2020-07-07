@@ -91,6 +91,33 @@ namespace TW.DataLayerSql
             }
         }
 
+        public OurClientsBanner GetClientsBanner(long Id)
+        {
+            using (SqlConnection connection = new SqlConnection(CommonUtility.ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(StoreProcedure.GetClientBannersDetails, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@Id", Id));
+
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    OurClientsBanner clientsBanner = new OurClientsBanner();
+                    clientsBanner = UtilityManager.DataReaderMap<OurClientsBanner>(reader);
+                    return clientsBanner;
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Exception retrieving reviews. " + e.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
+
         public long InsertBanner(Banner banner)
         {
             long id = 0;
@@ -203,6 +230,40 @@ namespace TW.DataLayerSql
                 {
                     string name = about.Name;
                     var value = about.GetValue(aboutUs, null);
+                    command.Parameters.Add(new SqlParameter("@" + name, value == null ? DBNull.Value : value));
+                }
+
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception e)
+                {
+                    isUpdate = false;
+                    throw new Exception("Exception Updating Data." + e.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+            return isUpdate;
+        }
+
+        public bool UpdateClientsBanner(OurClientsBanner ourClientsBanner)
+        {
+            bool isUpdate = true;
+
+            using (SqlConnection connection = new SqlConnection(CommonUtility.ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(StoreProcedure.UpdateClientsBanner, connection);
+                command.CommandType = CommandType.StoredProcedure;
+
+                foreach (var clientsBanner in ourClientsBanner.GetType().GetProperties())
+                {
+                    string name = clientsBanner.Name;
+                    var value = clientsBanner.GetValue(ourClientsBanner, null);
                     command.Parameters.Add(new SqlParameter("@" + name, value == null ? DBNull.Value : value));
                 }
 

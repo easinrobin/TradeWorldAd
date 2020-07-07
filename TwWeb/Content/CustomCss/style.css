@@ -193,9 +193,10 @@ header {
     /*padding: 0 0 20px;*/
     position: relative;
     z-index: 2000;
-    -webkit-box-shadow: 0 2px 4px -2px #ddd;
+    /*-webkit-box-shadow: 0 2px 4px -2px #ddd;
     -moz-box-shadow: 0 2px 4px -2px #ddd;
-    box-shadow: 0 2px 4px -2px #ddd;
+	 box-shadow: 0 2px 4px -2px #ddd;*/
+   
 }
 
     header .top {

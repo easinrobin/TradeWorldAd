@@ -116,5 +116,6 @@ namespace TwAdmin.Controllers
             pathUrl = "/img/Images/" + filename;
             adminVwModel.Clients.ImageUrl = pathUrl;
         }
+
     }
 }
