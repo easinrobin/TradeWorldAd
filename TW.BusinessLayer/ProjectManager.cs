@@ -110,5 +110,11 @@ namespace TW.BusinessLayer
             SqlProjectGalleryProvider provider = new SqlProjectGalleryProvider();
             return provider.GetAllProjectGalleriesByProjectId(projectId);
         }
+
+        public static ProjectGallery ProjectGalleryById(int galleryId)
+        {
+            SqlProjectGalleryProvider provider = new SqlProjectGalleryProvider();
+            return provider.GetProjectGalleryById(galleryId);
+        }
     }
 }

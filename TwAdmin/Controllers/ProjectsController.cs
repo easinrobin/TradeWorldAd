@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TW.BusinessLayer;
 using TW.Models;
+using Vereyon.Web;
 
 namespace TwAdmin.Controllers
 {
@@ -26,49 +28,83 @@ namespace TwAdmin.Controllers
             return View(av);
         }
 
-        public ActionResult GalleryList(int Id)
-        {
-            if (Id != 0)
-            {
-                ViewBag.ProjectId = Id;
-                AdminViewModel av = new AdminViewModel();
-                av.ProjectGalleryList = ProjectManager.GetProjectGalleryById(Id);
-                return View(av);
-            }
-
-            return View("Index");
-        }
-
-        public ActionResult CreateGallery(long Id)
+        public ActionResult GalleryList(int? id)
         {
             AdminViewModel av = new AdminViewModel();
-            ProjectGallery gallery = new ProjectGallery
+            if (!string.IsNullOrEmpty(id.ToString()))
             {
-                ProjectId = Id
-            };
-            av.ProjectGallery = gallery;
-            return View(av);
-        }
-
-        public ActionResult DeleteGalleryItem(long Id)
-        {
-            ProjectManager.DeleteProjectGallery(Id);
+                var isProjectExists = ProjectManager.GetProjectById(id ?? 0);
+                if (isProjectExists != null)
+                {
+                    av.ProjectGalleryList = ProjectManager.GetProjectGalleryById(id ?? 0);
+                    if (av.ProjectGalleryList != null)
+                    {
+                        ViewBag.ProjectId = id;
+                        return View(av);
+                    }
+                }
+            }
+            FlashMessage.Danger("Project not found.");
             return RedirectToAction("Index");
         }
 
-        public ActionResult UpdateProject(long Id)
+        public ActionResult CreateGallery(int? id)
         {
-            if (Id > 0)
+            AdminViewModel av = new AdminViewModel();
+            if (!string.IsNullOrEmpty(id.ToString()))
             {
-                _loadProjects();
-                AdminViewModel av = new AdminViewModel();
-                av.Project = ProjectManager.GetProjectById(Id);
+                var isProjectExists = ProjectManager.GetProjectById(id ?? 0);
+                if (isProjectExists != null)
+                {
+                    ProjectGallery gallery = new ProjectGallery
+                    {
+                        ProjectId = id ?? 0
+                    };
+                    av.ProjectGallery = gallery;
+
+                    return View(av);
+                }
+            }
+            FlashMessage.Danger("Could not add gallery item for this project.");
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult DeleteGalleryItem(int id, int projectId)
+        {
+            if (!string.IsNullOrEmpty(id.ToString()))
+            {
+                var isGalleryExists = ProjectManager.ProjectGalleryById(id);
+                if (isGalleryExists != null)
+                {
+                    ProjectManager.DeleteProjectGallery(id);
+                    FlashMessage.Info("Image deleted successfully.");
+                    return RedirectToAction("GalleryList", new
+                    {
+                        id = projectId
+                    });
+                }
+            }
+
+            FlashMessage.Danger("Something went wrong. Could not delete image.");
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult UpdateProject(long? id)
+        {
+            AdminViewModel av = new AdminViewModel();
+            if (!string.IsNullOrEmpty(id.ToString()))
+            {
+                var categoryList = _loadProjects();
+                ViewData["CategoryList"] = categoryList;
+
+                av.Project = ProjectManager.GetProjectById(id ?? 0);
                 if (av.Project != null)
                 {
                     return View("~/Views/Projects/UpdateProject.cshtml", av);
                 }
             }
 
+            FlashMessage.Danger("Something went wrong. Could not update this project.");
             return RedirectToAction("Index");
         }
 
@@ -102,7 +138,7 @@ namespace TwAdmin.Controllers
         }
 
         [HttpPost]
-        public ActionResult UpdateProject(AdminViewModel av, long Id, HttpPostedFileBase image)
+        public ActionResult UpdateProject(AdminViewModel av, long id, HttpPostedFileBase image)
         {
             av.Project.IsActive = true;
             av.Project.CreatedBy = "Admin";
@@ -111,6 +147,8 @@ namespace TwAdmin.Controllers
 
             bool isUpdateProject = ProjectManager.UpdateProject(av.Project);
             bool isUpdateProjectCategoty = ProjectManager.UpdateProjectCategory(av.ProjectCategory);
+
+            FlashMessage.Danger("Project Updated Successfully.");
             return RedirectToAction("Index");
         }
 
@@ -149,6 +187,7 @@ namespace TwAdmin.Controllers
                     }
                 }
             }
+            FlashMessage.Confirmation("Image added successfully");
             return RedirectToAction("GalleryList", new
             {
                 Id = av.ProjectGallery.ProjectId
@@ -179,7 +218,7 @@ namespace TwAdmin.Controllers
                     {
                         ImageUrl = pathUrl,
                         ProjectId = projectId,
-                        IsActive = true, 
+                        IsActive = true,
                         CreatedBy = "Admin",
                         CreatedDate = DateTime.Now
                     };
@@ -203,10 +242,33 @@ namespace TwAdmin.Controllers
             return pathUrl;
         }
 
-        public void _loadProjects()
+        //public void _loadProjects()
+        //{
+        //    List<ProjectCategory> dataList = ProjectManager.GetAllProjectCategory();
+        //    ViewBag.CategoryList = new SelectList(dataList, "Id", "Name");
+        //}
+
+        public SelectList _loadProjects()
         {
-            List<ProjectCategory> dataList = ProjectManager.GetAllProjectCategory();
-            ViewBag.CategoryList = new SelectList(dataList, "Id", "Name");
+            AdminViewModel av = new AdminViewModel();
+            var categoryData = new SelectList("", "");
+            try
+            {
+                var category = ProjectManager.GetAllProjectCategory();
+                if (!string.IsNullOrEmpty(category.ToString()))
+                {
+                    av.ProjectCategoryList = new List<ProjectCategory>();
+                    av.ProjectCategoryList = category.OrderBy(x => x.Id).ToList();
+                    categoryData = new SelectList(av.ProjectCategoryList, "Id", "Name");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            return categoryData;
         }
     }
 }

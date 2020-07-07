@@ -25,7 +25,6 @@
         <a href="~/Projects/UpdateProject/@Model.Project.Id" class="actions__item zmdi zmdi-refresh zmdi-hc-fw" title="Refresh"></a>
     </div>
 </header>
-
 <div class="card">
     <div class="card-body">
         @using (Html.BeginForm("UpdateProject", "Projects", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -56,7 +55,7 @@
                     @Html.TextBoxFor(model => model.Project.Consultant_Contractor, new { @class = "form-control", placeHolder = "Property Name" })
                     @Html.ValidationMessageFor(model => model.Project.Consultant_Contractor, "", new { @class = "text-danger" })
                 </div>
-                
+
                 <div class="form-group">
                     @Html.LabelFor(model => model.Project.ShortDetails, new { @class = "card-body__title" })
                     @Html.TextBoxFor(model => model.Project.ShortDetails, new { @class = "form-control", PlaceHolder = "Short details about the project" })
@@ -79,7 +78,7 @@
 
                 <div class="form-group">
                     <label class="card-body__title">Category Names</label>
-                    @Html.DropDownListFor(model => model.ProjectCategory.Name, ViewBag.CategoryList as SelectList, "Category Names", new { @class = "form-control ddlbg" })
+                    @Html.DropDownListFor(model => model.ProjectCategory.Name, (IEnumerable<SelectListItem>)ViewData["CategoryList"], "Category Names", new { @class = "form-control ddlbg" })
                     @Html.ValidationMessageFor(model => model.ProjectCategory.Name, "", new { @class = "text-danger" })
                 </div>
 
