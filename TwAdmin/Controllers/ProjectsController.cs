@@ -73,7 +73,7 @@ namespace TwAdmin.Controllers
         {
             if (!string.IsNullOrEmpty(id.ToString()))
             {
-                var isGalleryExists = ProjectManager.ProjectGalleryById(id);
+                var isGalleryExists = ProjectManager.GetGalleryById(id);
                 if (isGalleryExists != null)
                 {
                     ProjectManager.DeleteProjectGallery(id);
@@ -105,6 +105,21 @@ namespace TwAdmin.Controllers
             }
 
             FlashMessage.Danger("Something went wrong. Could not update this project.");
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult UpdateProjectG(int Id)
+        {
+            if (Id > 0)
+            {
+                AdminViewModel av = new AdminViewModel();
+                av.ProjectGallery = ProjectManager.GetGalleryById(Id);
+                if (av.ProjectGallery != null)
+                {
+                    return View("~/Views/Projects/UpdateGalleryItem.cshtml", av);
+                }
+            }
+
             return RedirectToAction("Index");
         }
 
