@@ -22,6 +22,7 @@ namespace TW.BusinessLayer
             return provider.GetProjectById(Id);
         }
 
+
         public static bool UpdateProject(Project project)
         {
             SqlProjectProvider provider = new SqlProjectProvider();
@@ -111,10 +112,11 @@ namespace TW.BusinessLayer
             return provider.GetAllProjectGalleriesByProjectId(projectId);
         }
 
-        public static ProjectGallery ProjectGalleryById(int galleryId)
+        public static ProjectGallery GetGalleryById(int Id)
         {
             SqlProjectGalleryProvider provider = new SqlProjectGalleryProvider();
-            return provider.GetProjectGalleryById(galleryId);
+            return provider.GetGalleryById(Id);
         }
+
     }
 }

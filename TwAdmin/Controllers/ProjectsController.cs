@@ -153,6 +153,18 @@ namespace TwAdmin.Controllers
         }
 
         [HttpPost]
+        public ActionResult UpdateProjectG(AdminViewModel av)
+        {
+            av.ProjectGallery.IsActive = true;
+            av.ProjectGallery.CreatedBy = "Admin";
+            av.ProjectGallery.CreatedDate = DateTime.Today;
+           
+
+            bool isUpdateProject = ProjectManager.UpdateProjectGallery(av.ProjectGallery);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
         public ActionResult CreateGallery(AdminViewModel av, HttpPostedFileBase image)
         {
             if (av != null)
@@ -270,5 +282,7 @@ namespace TwAdmin.Controllers
 
             return categoryData;
         }
+
+       
     }
 }

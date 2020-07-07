@@ -123,14 +123,18 @@ namespace TwWeb.Controllers
             if (Session["CompanySetting"] != null)
             {
                 publicViewModel.CompanySetting = (CompanySetting)Session["CompanySetting"];
+                publicViewModel.ClientsBanner = HomeManager.GetClientsBanner(1);
             }
             else
             {
                 publicViewModel.CompanySetting = CompanySettingsManager.GetCompanySettings(1);
+               
             }
 
             return View(publicViewModel);
         }
+       
+
 
         [HttpPost]
         public ActionResult Contact(PublicViewModel pv)

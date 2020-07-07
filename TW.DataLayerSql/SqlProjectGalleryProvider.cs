@@ -62,6 +62,33 @@ namespace TW.DataLayerSql
                 }
             }
         }
+
+        public ProjectGallery GetGalleryById(int Id)
+        {
+            using (SqlConnection connection = new SqlConnection(CommonUtility.ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(StoreProcedure.GetProjectGalleryById, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@Id", Id));
+                try
+                {
+                    connection.Open();
+                    SqlDataReader dataReader = command.ExecuteReader();
+                    ProjectGallery gallery = new ProjectGallery();
+                    gallery = UtilityManager.DataReaderMap<ProjectGallery>(dataReader);
+                    return gallery;
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Exception retrieving reviews. " + e.Message);
+                }
+
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
         public ProjectGallery GetProjectGalleryById(long Id)
         {
             using (SqlConnection connection = new SqlConnection(CommonUtility.ConnectionString))
@@ -187,6 +214,8 @@ namespace TW.DataLayerSql
             }
             return isDelete;
         }
-        
+
+      
+
     }
 }

@@ -250,6 +250,7 @@
     <Content Include="img\Gallery\Signage_maker_in_gurgaon_1.jpg" />
     <Content Include="img\Gallery\uv.jpg" />
     <Content Include="img\Gallery\wellfood.jpg" />
+    <Content Include="img\giphy.gif" />
     <Content Include="img\glyphicons-halflings-white.png" />
     <Content Include="img\glyphicons-halflings.png" />
     <Content Include="img\logo.png" />
@@ -366,7 +367,9 @@
     <Content Include="Scripts\ThirdPartyJs\slick.min.js" />
     <Content Include="Scripts\ThirdPartyJs\toucheffects.js" />
     <Content Include="twaicon.ico" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

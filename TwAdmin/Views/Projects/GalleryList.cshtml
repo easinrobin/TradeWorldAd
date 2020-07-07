@@ -48,6 +48,7 @@
                             </td>
                             <td>
                                 @Html.ActionLink(" ", "DeleteGalleryItem", new { @item.Id, item.ProjectId }, new { @class = "actions__item zmdi zmdi-delete zmdi-hc-fw", onclick = "return confirm('Are you sure you want to delete this item?')" })
+                                @Html.ActionLink(" ", "UpdateProject", new { Id = item.Id }, new { @class = "zmdi zmdi-edit", title = "Edit Item", data_toggle = "tooltip", data_placement = "top" })&nbsp;&nbsp;
                             </td>
                         </tr>
                     }

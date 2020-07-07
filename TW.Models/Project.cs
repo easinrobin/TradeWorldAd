@@ -44,5 +44,7 @@ namespace TW.Models
 
         [Display(Name = "Is Active")]
         public bool IsActive { get; set; }
+
+        //public string ProjectCategoryName { get; set; }
     }
 }

@@ -193,9 +193,9 @@ header {
     /*padding: 0 0 20px;*/
     position: relative;
     z-index: 2000;
-    -webkit-box-shadow: 0 2px 4px -2px #ddd;
-    -moz-box-shadow: 0 2px 4px -2px #ddd;
-    box-shadow: 0 2px 4px -2px #ddd;
+    -webkit-box-shadow: 0 2px 4px -2px #000000;
+    -moz-box-shadow: 0 2px 4px -2px #000000;
+    box-shadow: 0 2px 4px -2px #000000;
 }
 
     header .top {
@@ -2407,11 +2407,72 @@ ul.the-icons {
 21. Media queries
 ============================= */
 
+@media (min-width: 1024px) and (max-width: 1366px) {
+
+
+    /*#baguetteBox-overlay .full-image{
+        position: relative;
+    }
+
+    #baguetteBox-overlay .full-image{
+        max-height: 98%;
+        max-width: 100%;
+    }
+
+    baguetteBox-overlay .full-image img {
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }*/
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /*#baguetteBox-overlay .full-image {
+        position: relative;
+    }
+
+    #baguetteBox-overlay .full-image {
+        max-height: 95%;
+        max-width: 95%;
+    }
+
+    baguetteBox-overlay .full-image img {
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }*/
+}
 @media (min-width: 979px) and (max-width: 1200px) {
     #wrapper.boxed {
         width: 1000px;
         margin: 0 auto;
     }
+
+    /*#baguetteBox-overlay .full-image {
+        position: relative;
+    }
+
+    #baguetteBox-overlay .full-image {
+        max-height: 95%;
+        max-width: 95%;
+    }
+
+    baguetteBox-overlay .full-image img {
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }*/
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
@@ -2478,6 +2539,23 @@ ul.the-icons {
     .service-page-box {
         height: 530px;
     }
+    /*#baguetteBox-overlay .full-image {
+        position: relative;
+    }
+
+    #baguetteBox-overlay .full-image {
+        max-height: 95%;
+        max-width: 95%;
+    }
+
+    baguetteBox-overlay .full-image img {
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }*/
 }
 
 @media (max-width: 768px) {
@@ -2614,6 +2692,23 @@ ul.the-icons {
     [class*="span"] {
         margin-bottom: 20px;
     }
+    /*#baguetteBox-overlay .full-image {
+        position: relative;
+    }
+
+    #baguetteBox-overlay .full-image {
+        max-height: 95%;
+        max-width: 95%;
+    }
+
+    baguetteBox-overlay .full-image img {
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }*/
 }
 
 @media (max-width: 480px) {
@@ -2682,9 +2777,35 @@ ul.the-icons {
         margin: 0 auto;
         text-align: center;
     }
+    /*#baguetteBox-overlay .full-image{
+        position: absolute;
+    }
+
+    #baguetteBox-overlay .full-image{
+        max-height: 95%;
+        max-width: 95%;
+    }
+
+    baguetteBox-overlay .full-image img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }*/
+
 }
 
 @media (max-width: 360px) {
+
+
+
+    #baguetteBox-overlay .full-image{
+        max-height: 95%;
+        max-width: 95%;
+    }
+
 }
 
 /* ============== options panel for live preview ======================= */
@@ -3015,6 +3136,25 @@ ul.the-icons {
     header .logo img {
         margin: 10px 0 0;
     }
+
+    /*#baguetteBox-overlay .full-image{
+        position: relative;
+    }
+
+    #baguetteBox-overlay .full-image{
+        max-height: 95%;
+        max-width: 95%;
+    }
+
+    baguetteBox-overlay .full-image img {
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }*/
+
 }
 
 div.pp_default .pp_description {
@@ -3146,6 +3286,228 @@ div.pp_default .pp_content, div.light_rounded .pp_content{
 
 .camera_overlayer {
     background: rgba(0, 0, 0, 0.65) !important;
+}
+
+    #baguetteBox-overlay .full-image img
+    {
+        border: 8px solid #ddd;
+    }
+
+    /*#baguetteBox-overlay .full-image {
+
+        max-height: 95%;
+        max-width: 95%;
+    }*/
+/*#baguetteBox-overlay .full-image {
+    display: inline-block;
+    position: relative;
+    max-height: 95%;
+    max-width: 95%;
+    text-align: center;
+    margin-left: 1px;
+    margin-right: 18px;
+}*/
+
+
+/*#baguetteBox-overlay .full-image{
+    position: relative;
+}
+
+#baguetteBox-overlay .full-image{
+    max-height: 95%;
+}
+
+baguetteBox-overlay .full-image img {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}*/
+
+
+
+
+/*......................baguetteBox.............................*/
+
+#baguetteBox-overlay .full-image {
+
+    max-height: 98%;
+}
+
+    #baguetteBox-overlay .full-image img {
+        width: 85%;
+        height: 85%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+
+    #baguetteBox-overlay .full-image {
+        max-height: 100%;
+        max-width: 100%;
+
+        /*margin-left: 1px;
+        margin-right: 22px;*/
+    }
+
+    #baguetteBox-overlay .full-image img {
+        width: 80%;
+        height: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+
+        }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    #baguetteBox-overlay .full-image {
+        max-height: 100%;
+        max-width: 97.5%;
+        margin-left: 1px;
+        margin-right: 22px;
+    }
+    #baguetteBox-overlay .full-image img {
+        width: 80%;
+        height: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+}
+
+
+@media (min-width: 375px) and (max-width: 812px) {
+
+    #baguetteBox-overlay .full-image {
+        max-height: 95%;
+        max-width: 95%;
+        margin-left: 1px;
+        margin-right: 18px;
+    }
+    #baguetteBox-overlay .full-image img {
+        width: 80%;
+        height: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+}
+
+
+@media (min-width: 320px) and (max-width: 568px) {
+
+    #baguetteBox-overlay .full-image {
+        max-height: 95%;
+        max-width: 95%;
+        margin-left: 1px;
+        margin-right: 18px;
+    }
+    #baguetteBox-overlay .full-image img {
+        width: 80%;
+        height: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+}
+
+
+@media (max-width: 812px) and (min-width: 375px) and (orientation : portrait) {
+
+    #baguetteBox-overlay .full-image {
+        max-width: 99%;
+    }
+}
+
+
+
+
+/*......................... Gallery Loader.................................*/
+
+.row tzcontent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid #242f3f;
+    animation: loader 2s infinite ease;
+}
+.loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #242f3f;
+    animation: loader-inner 2s infinite ease-in;
+}
+@keyframes loader {
+    0% { transform: rotate(0deg);}
+    25% { transform: rotate(180deg);}
+    50% { transform: rotate(180deg);}
+    75% { transform: rotate(360deg);}
+    100% { transform: rotate(360deg);}
+}
+@keyframes loader-inner {
+    0% { height: 0%;}
+    25% { height: 0%;}
+    50% { height: 100%;}
+    75% { height: 100%;}
+    100% { height: 0%;}
+}
+
+.tz-gallery {
+    padding-left: 20px;
+    padding-top: 50px ;
+}
+
+
+@media (min-width: 320px) and (max-width: 812px) {
+
+    .tz-gallery {
+        padding-left: 0;
+    }
+}
 }
 
     #baguetteBox-overlay .full-image img
