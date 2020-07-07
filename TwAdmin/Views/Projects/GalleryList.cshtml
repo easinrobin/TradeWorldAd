@@ -36,6 +36,7 @@
                 <thead>
                     <tr>
                         <th>Images</th>
+                        <th>Caption</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -45,6 +46,9 @@
                         <tr>
                             <td>
                                 <img src="@item.ImageUrl" width="100" height="100" alt="Office" />
+                            </td>
+                            <td>
+                                @item.ImageDetails
                             </td>
                             <td>
                                 @Html.ActionLink(" ", "DeleteGalleryItem", new { @item.Id, item.ProjectId }, new { @class = "actions__item zmdi zmdi-delete zmdi-hc-fw", onclick = "return confirm('Are you sure you want to delete this item?')" })
