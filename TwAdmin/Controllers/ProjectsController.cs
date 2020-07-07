@@ -56,7 +56,22 @@ namespace TwAdmin.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult UpdateProject(long Id)
+        public ActionResult UpdateProject(int Id)
+        {
+            if (Id > 0)
+            {
+                AdminViewModel av = new AdminViewModel();
+                av.ProjectGallery = ProjectManager.GetGalleryById(Id);
+                if (av.ProjectGallery != null)
+                {
+                    return View("~/Views/Projects/UpdateGalleryItem.cshtml", av);
+                }
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult GetProjectImgById(long Id)
         {
             if (Id > 0)
             {
@@ -111,6 +126,18 @@ namespace TwAdmin.Controllers
 
             bool isUpdateProject = ProjectManager.UpdateProject(av.Project);
             bool isUpdateProjectCategoty = ProjectManager.UpdateProjectCategory(av.ProjectCategory);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult UpdateProjectG(AdminViewModel av)
+        {
+            av.ProjectGallery.IsActive = true;
+            av.ProjectGallery.CreatedBy = "Admin";
+            av.ProjectGallery.CreatedDate = DateTime.Today;
+           
+
+            bool isUpdateProject = ProjectManager.UpdateProjectGallery(av.ProjectGallery);
             return RedirectToAction("Index");
         }
 
@@ -208,5 +235,7 @@ namespace TwAdmin.Controllers
             List<ProjectCategory> dataList = ProjectManager.GetAllProjectCategory();
             ViewBag.CategoryList = new SelectList(dataList, "Id", "Name");
         }
+
+       
     }
 }

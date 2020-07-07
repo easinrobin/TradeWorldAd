@@ -276,6 +276,7 @@
     <Content Include="Views\Category\InsertCategory.cshtml" />
     <Content Include="Views\Category\Categories.cshtml" />
     <Content Include="Views\Home\ClientsBanner.cshtml" />
+    <Content Include="Views\Projects\UpdateGalleryItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -88,6 +88,32 @@ namespace TW.DataLayerSql
                 }
             }
         }
+        public Project GetGalleryItemById(long Id)
+        {
+            using (SqlConnection connection = new SqlConnection(CommonUtility.ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(StoreProcedure.GetProjectGalleryById, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(new SqlParameter("@Id", Id));
+
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    Project project = new Project();
+                    project = UtilityManager.DataReaderMap<Project>(reader);
+                    return project;
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Exception retrieving reviews. " + e.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
 
         public long InsertProject(Project project)
         {
