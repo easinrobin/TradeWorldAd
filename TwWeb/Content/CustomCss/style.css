@@ -3509,3 +3509,15 @@ baguetteBox-overlay .full-image img {
         padding-left: 0;
     }
 }
+}
+
+    #baguetteBox-overlay .full-image img
+    {
+        border: 8px solid #ddd;
+    }
+
+    #baguetteBox-overlay .full-image {
+
+        max-height: 95%;
+        max-width: 95%;
+    }
