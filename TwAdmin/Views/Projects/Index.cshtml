@@ -33,9 +33,19 @@
                 <tbody>
                     @foreach (var item in Model.ProjectList)
                     {
+                        var projCategory = ProjectManager.GetProjectCategoryById(item.ProjectCategoryId);
+
                         <tr>
                             <td>@item.ProjectName</td>
-                            <td>@Html.Raw(ProjectManager.GetProjectCategoryById(item.ProjectCategoryId).Name)</td>
+                            @if (projCategory != null)
+                            {
+                                <td>@Html.Raw(projCategory.Name)</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                           
                             <td>@item.ProjectLocation</td>
                             <td>@item.ArchitectName</td>
                             <td>

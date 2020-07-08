@@ -24,7 +24,8 @@ namespace TwAdmin.Controllers
         {
             AdminViewModel av = new AdminViewModel();
             av.Project = new Project();
-            _loadProjects();
+            var categoryList = _loadProjects();
+            ViewData["CategoryList"] = categoryList;
             return View(av);
         }
 

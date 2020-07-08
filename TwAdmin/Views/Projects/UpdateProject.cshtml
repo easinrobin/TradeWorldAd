@@ -78,7 +78,7 @@
 
                 <div class="form-group">
                     <label class="card-body__title">Category Names</label>
-                    @Html.DropDownListFor(model => model.ProjectCategory.Name, (IEnumerable<SelectListItem>)ViewData["CategoryList"], "Category Names", new { @class = "form-control ddlbg" })
+                    @Html.DropDownListFor(model => model.Project.ProjectCategoryId, (IEnumerable<SelectListItem>)ViewData["CategoryList"], "Category Names", new { @class = "form-control ddlbg" })
                     @Html.ValidationMessageFor(model => model.ProjectCategory.Name, "", new { @class = "text-danger" })
                 </div>
 
