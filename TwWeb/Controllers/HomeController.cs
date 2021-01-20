@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using TW.BusinessLayer;
 using TW.Models;
 
@@ -13,8 +8,6 @@ namespace TwWeb.Controllers
     {
         public ActionResult Index()
         {
-//            public const  string sql = "Update User set age = {0} where UserId = {2}";
-//            string.Format(sql, 12, "mehedi");
             PublicViewModel publicViewModel = new PublicViewModel();
             if (Session["CompanySetting"] != null)
             {

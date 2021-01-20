@@ -338,6 +338,7 @@
     <Content Include="Content\fonts\fontawesome\fontawesome-webfont.eot" />
     <Content Include="Content\fonts\fontawesome\fontawesome-webfont.ttf" />
     <Content Include="Content\fonts\fontawesome\fontawesome-webfont.woff" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\ThirdPartyJs\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\ThirdPartyJs\camera\camera.js" />
     <Content Include="Scripts\ThirdPartyJs\camera\setting.js" />

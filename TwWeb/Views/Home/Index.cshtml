@@ -1,7 +1,7 @@
 ﻿@model TW.Models.PublicViewModel
 @{
     ViewBag.Title = "Home";
-    var imagePath = "http://twadmin.thebyteheart.com/" + Model.CompanySetting.ImgUrl;
+    var imagePath = "http://admin.tradeworldad.com/" + Model.CompanySetting.ImgUrl;
 }
 
 <!-- section featured -->
@@ -16,14 +16,14 @@
         @foreach (var banner in Model.Banners.FindAll(x => x.IsActive == true).ToList())
         {
             string imagepath, sliderImage;
-            sliderImage = "http://twadmin.thebyteheart.com/" + banner.SliderBgImgUrl;
+            sliderImage = "http://admin.tradeworldad.com/" + banner.SliderBgImgUrl;
             if (banner.ImageUrl == null)
             {
                 imagepath = null;
             }
             else
             {
-                imagepath = "http://twadmin.thebyteheart.com/" + banner.ImageUrl;
+                imagepath = "http://admin.tradeworldad.com/" + banner.ImageUrl;
             }
 
             if (i == 1)
@@ -123,7 +123,7 @@
             }
             @foreach (var data in Model.OurMachines)
             {
-                var imagepath = "http://twadmin.thebyteheart.com/" + data.ImageUrl;
+                var imagepath = "http://admin.tradeworldad.com/" + data.ImageUrl;
                 if (j == 1)
                 {
                     <div class="span4">
@@ -218,7 +218,7 @@
                 <div class="row">
                     @foreach (var cat in Model.ProjectCategories)
                     {
-                        var imagepath = "http://twadmin.thebyteheart.com/" + cat.ImageUrl;
+                        var imagepath = "http://admin.tradeworldad.com/" + cat.ImageUrl;
                         <div class="span4 box-project">
                             <a href="/Home/Projectdetails/@cat.Id">
                                 <div class="service-box project-box aligncenter flyIn">
