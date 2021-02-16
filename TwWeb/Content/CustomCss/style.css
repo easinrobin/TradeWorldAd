@@ -3546,3 +3546,8 @@ baguetteBox-overlay .full-image img {
         max-height: 95%;
         max-width: 95%;
     }*/
+
+::selection {
+    color: #fff;
+    background: #EA5027;
+}
