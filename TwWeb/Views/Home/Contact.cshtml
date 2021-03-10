@@ -64,7 +64,7 @@
                             <li>
                                 <label>Address :</label><strong> @Html.Raw(Model.CompanySetting.CompanyName)</strong><br /> @Html.Raw(Model.CompanySetting.CompanyAddress)
                             </li>
-                            <li><label>Phone :</label> @Html.Raw(Model.CompanySetting.MainContactNo)</li>
+                            <li><label>Phone :</label> @Html.Raw(Model.CompanySetting.MainContactNo), @Html.Raw(Model.CompanySetting.ContactNo)</li>
                             <li><label>Email : </label> @Html.Raw(Model.CompanySetting.Email_1), @Html.Raw(Model.CompanySetting.Email_2)</li>
                         </ul>
 
@@ -73,6 +73,8 @@
                 </aside>
             </div>
         </div>
-        @Html.Raw(Model.CompanySetting.GMapLocation)
+        <div class="map-loc">
+            @Html.Raw(Model.CompanySetting.GMapLocation)
+        </div>
     </div>
 </section>

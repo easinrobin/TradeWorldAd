@@ -7,7 +7,7 @@
         Session["CompanySetting"] = companySetting;
     }
 
-    var imagepath = "http://twadmin.thebyteheart.com/" + @companySetting.LogoUrl;
+    var imagepath = "http://admin.tradeworldad.com/" + @companySetting.LogoUrl;
 }
 <!DOCTYPE html>
 <html>
@@ -17,6 +17,7 @@
     <title>@ViewBag.Title - @companySetting.CompanyName | Creative Digital Sign Manufacturer & Supplier</title>
     <meta name="description" content="tradeworld advertising, creative digital sign manufacturer & supplier" />
     <meta name="title" content="trade world advertising">
+    <link rel="icon" href="@Url.Content("~/twaicon.ico")" />
     <link href="https://fonts.googleapis.com/css?family=Handlee|Open+Sans:300,400,600,700,800" rel="stylesheet">
     @Styles.Render("~/Content/ThirdPartyCss/bootstrapcss")
     @Styles.Render("~/Content/ThirdPartyCss/bootstrap-responsive")
@@ -26,15 +27,16 @@
     @Styles.Render("~/Content/ThirdPartyCss/bxslider")
     @Styles.Render("~/Content/ThirdPartyCss/slick")
     @Styles.Render("~/Content/ThirdPartyCss/slick-theme")
-    @*@Styles.Render("~/Content/ThirdPartyCss/css")*@
     @Styles.Render("~/Content/ThirdPartyCss/animate")
     @Styles.Render("~/Content/ThirdPartyCss/font-awesome")
     @Styles.Render("~/Content/ThirdPartyCss/cslider")
     @Styles.Render("~/Content/ThirdPartyCss/overwrite")
     @Styles.Render("~/Content/ThirdPartyCss/shortcodes")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
     @Scripts.Render("~/bundles/ThirdPartyJs/modernizr")
     @Styles.Render("~/Content/CustomCss/style")
     @Styles.Render("~/Content/ThirdPartyCss/defaultColor")
+    
 </head>
 <body>
 
@@ -43,9 +45,9 @@
         <header>
             <div class="top">
                 <div class="container">
-                    <div class="row">
+                    <div class="row inline-top">
                         <div class="span6">
-                            <p class="topcontact"><i class="icon-phone"></i> @Html.Raw(companySetting.MainContactNo)</p>
+                            <p class="topcontact"><i class="icon-phone"></i> @Html.Raw(companySetting.MainContactNo) | <i class="icon-phone"></i> @Html.Raw(companySetting.ContactNo)</p>
                         </div>
                         <div class="span6">
 
@@ -66,31 +68,33 @@
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="row nomargin">
-                    <div class="span4">
-                        <div class="logo">
-                            <a href="/Home/"><img src="@imagepath" alt="" /></a>
-                        </div>
-                    </div>
-                    <div class="span8">
-                        <div class="navbar navbar-static-top">
-                            <div class="navigation">
-                                <nav>
-                                    <ul class="nav topnav">
-                                        <li>
-                                            <a href="/Home/Index"> Home </a>
-                                        </li>
-                                        <li><a href="/Home/About">About us</a></li>
-                                        <li><a href="/Home/Services">Service</a></li>
-                                        <li><a href="/Home/Ourprojects">Our Projects</a></li>
-                                        <li><a href="/Home/Clients">Our Clients</a></li>
-                                        <li><a href="/Home/Contact">Contact</a></li>
-
-                                    </ul>
-                                </nav>
+            <div id="bottom-nav">
+                <div class="container">
+                    <div class="row nomargin">
+                        <div class="span4">
+                            <div class="logo">
+                                <a href="/Home/"><img src="@imagepath" alt="" /></a>
                             </div>
-                            <!-- end navigation -->
+                        </div>
+                        <div class="span8">
+                            <div class="navbar navbar-static-top">
+                                <div class="navigation">
+                                    <nav>
+                                        <ul class="nav topnav">
+                                            <li>
+                                                <a href="/Home/Index"> Home </a>
+                                            </li>
+                                            <li><a href="/Home/About">About us</a></li>
+                                            <li><a href="/Home/Services">Service</a></li>
+                                            <li><a href="/Home/Ourprojects">Our Projects</a></li>
+                                            <li><a href="/Home/Clients">Our Clients</a></li>
+                                            <li><a href="/Home/Contact">Contact</a></li>
+
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <!-- end navigation -->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -123,10 +127,11 @@
                             <h5 class="widgetheading">Get in touch</h5>
                             <address>
                                 <strong>@Html.Raw(companySetting.CompanyName)</strong><br>
-                              @Html.Raw(companySetting.CompanyAddress)
+                                @Html.Raw(companySetting.CompanyAddress)
                             </address>
                             <p>
                                 <i class="icon-phone"></i>  @Html.Raw(companySetting.MainContactNo)<br>
+                                <i class="icon-phone"></i>  @Html.Raw(companySetting.ContactNo)<br>
                                 <i class="icon-envelope-alt"></i>  @Html.Raw(companySetting.Email_1)<br>
                                 <i class="icon-envelope-alt"></i>  @Html.Raw(companySetting.Email_2)
                             </p>
@@ -154,7 +159,7 @@
                     <div class="row">
                         <div class="span6">
                             <div class="copyright">
-                                <p><span>&copy; @Html.Raw(companySetting.CompanyName). All right reserved</span></p>
+                                <p><span>&copy; @DateTime.Now.Year <a href="http://tradeworldad.com/" target="_self">@Html.Raw(companySetting.CompanyName)</a>. All right reserved</span></p>
                             </div>
                         </div>
                         <div class="span6">
@@ -188,7 +193,7 @@
     @Scripts.Render("~/bundles/CustomJs/customJs")
     @Scripts.Render("~/bundles/ThirdPartyJs/clientslider")
     @Scripts.Render("~/bundles/ThirdPartyJs/slick")
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
 
     @Scripts.Render("~/bundles/ThirdPartyJs/jqueryval")
     @Scripts.Render("~/bundles/ThirdPartyJs/jqueryvalUnobtrusive")
@@ -226,17 +231,44 @@
 
         });
 
-        $(function(){
+        $(function () {
             // this will get the full URL at the address bar
-            var url = window.location.href; 
-            // passes on every "a" tag 
-            $(".nav a").each(function() {
+            var url = window.location.href;
+            // passes on every "a" tag
+            $(".nav a").each(function () {
                 // checks if its the same on the address bar
-                if(url == (this.href)) { 
+                if (url == (this.href)) {
                     $(this).closest("li").addClass("active");
                 }
             });
         });
+
+
     </script>
+    <script>
+        baguetteBox.run('.tz-gallery');
+    </script>
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        var navbar = document.getElementById("bottom-nav");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky");
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+
+    <script>
+        $(window).on("load", function () {
+            $(".loader-wrapper").fadeOut("slow");
+        });
+    </script>
+
+
 </body>
 </html>

@@ -1,6 +1,7 @@
 ﻿@model TW.Models.PublicViewModel
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Home";
+    var imagePath = "http://admin.tradeworldad.com/" + Model.CompanySetting.ImgUrl;
 }
 
 <!-- section featured -->
@@ -14,19 +15,20 @@
         }
         @foreach (var banner in Model.Banners.FindAll(x => x.IsActive == true).ToList())
         {
-            string imagepath;
+            string imagepath, sliderImage;
+            sliderImage = "http://admin.tradeworldad.com/" + banner.SliderBgImgUrl;
             if (banner.ImageUrl == null)
             {
                 imagepath = null;
             }
             else
             {
-                imagepath = "http://twadmin.thebyteheart.com/" + banner.ImageUrl;
+                imagepath = "http://admin.tradeworldad.com/" + banner.ImageUrl;
             }
 
             if (i == 1)
             {
-                <div data-src="../img/slides/camera/slide2/img1.jpg">
+                <div data-src="@sliderImage">
                     <div class="camera_caption fadeFromLeft">
                         <div class="container">
                             <div class="row">
@@ -41,7 +43,7 @@
                                     </p>
 
                                 </div>
-                                <div class="span6">
+                                <div class="span6" style="display: none">
                                     <img src="@imagepath" alt="" class="animated bounceInDown delay1" />
                                 </div>
                             </div>
@@ -51,11 +53,11 @@
             }
             else if (i == 2)
             {
-                <div data-src="../img/slides/camera/slide2/img1.jpg">
+                <div data-src="@sliderImage">
                     <div class="camera_caption fadeFromLeft">
                         <div class="container">
                             <div class="row">
-                                <div class="span6">
+                                <div class="span6" style="display: none">
                                     <img src="@imagepath" alt="" />
                                 </div>
                                 <div class="span6">
@@ -77,7 +79,7 @@
             }
             else
             {
-                <div data-src="../img/slides/camera/slide2/img1.jpg">
+                <div data-src="@sliderImage">
                     <div class="camera_caption fadeFromLeft">
                         <div class="container">
                             <div class="row">
@@ -92,7 +94,7 @@
                                         @Html.Raw(banner.ShortDescription)
                                     </p>
                                 </div>
-                                <div class="span6">
+                                <div class="span6" style="display: none">
                                     <img src="@imagepath" alt="" />
                                 </div>
 
@@ -121,7 +123,7 @@
             }
             @foreach (var data in Model.OurMachines)
             {
-                var imagepath = "http://twadmin.thebyteheart.com/" + data.ImageUrl;
+                var imagepath = "http://admin.tradeworldad.com/" + data.ImageUrl;
                 if (j == 1)
                 {
                     <div class="span4">
@@ -201,7 +203,7 @@
     <div class="container">
         <div class="row">
             <div class="span12 text-center">
-                <img src="/img/Speech.png" width="550" />
+                <img src="@imagePath" width="550" />
             </div>
         </div>
     </div>
@@ -216,7 +218,7 @@
                 <div class="row">
                     @foreach (var cat in Model.ProjectCategories)
                     {
-                        var imagepath = "http://twadmin.thebyteheart.com/" + cat.ImageUrl;
+                        var imagepath = "http://admin.tradeworldad.com/" + cat.ImageUrl;
                         <div class="span4 box-project">
                             <a href="/Home/Projectdetails/@cat.Id">
                                 <div class="service-box project-box aligncenter flyIn">

@@ -28,19 +28,34 @@
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 @Html.HiddenFor(model => model.ProjectGallery.ProjectId)
 
-                <div class="form-group">
-                    <span class="control-label col-md-2">Upload Images:</span>
-                    <div class="col-md-10">
-                        @*<input type="file" name="files" id="files" multiple />*@
-                        @Html.TextBoxFor(model => model.Files, new { type = "file", id = "files", @multiple = "multiple" })
-                        @Html.ValidationMessageFor(model => model.Files, "", new { @class = "validation-text" })
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <span class="control-label col-md-2">Upload Images:</span>
+                            <div class="col-md-10">
+                                @*<input type="file" name="files" id="files" multiple />*@
+                                @Html.TextBoxFor(model => model.Files, new { type = "file", id = "files", @multiple = "multiple" })
+                                @Html.ValidationMessageFor(model => model.Files, "", new { @class = "validation-text" })
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Add" class="btn btn-success" />
+                
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Upload" class="btn btn-light" />
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                @*<div class="card-title">
+                    <div class="row">
+                        <button class="btn btn-light btn--icon-text"><i class="zmdi  zmdi-plus-circle-o zmdi-hc-fw"></i> Add More</button>
+                    </div>
+                </div>*@
             </div>
         }
     </div>

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Web;
 
 namespace TW.Models
 {
@@ -20,6 +22,10 @@ namespace TW.Models
         [Required(ErrorMessage = "Image required")]
         public string ImageUrl { get; set; }
 
+        [Display(Name = "Slider Background Img")]
+        [Required(ErrorMessage = "Image required")]
+        public string SliderBgImgUrl { get; set; }
+
         [Display(Name = "Created By")]
         public string CreatedBy { get; set; }
 
@@ -28,5 +34,11 @@ namespace TW.Models
 
         [Display(Name = "Is Active")]
         public bool IsActive { get; set; }
+    }
+
+    [NotMapped]
+    public class SliderBgImgUrl
+    {
+        public HttpPostedFileBase File { get; set; }
     }
 }

@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="@Url.Content("~/twaicon.ico")"/>
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/iconic-font")
     @Styles.Render("~/Content/dropzone")
@@ -69,12 +70,15 @@
                     <li><a href="/Company/CompanySettings"><i class="zmdi zmdi-city"></i>Company Settings</a></li>
 
                     <li><a href="/Clients/Index"><i class="zmdi zmdi-accounts"></i>Clients</a></li>
+                    <li><a href="/Home/ClientsBanner"><i class="zmdi zmdi-accounts"></i>Clients Banner</a></li>
 
                     <li><a href="/Machines/Index"><i class="zmdi zmdi-washing-machine"></i>Machines</a></li>
 
                     <li><a href="/Service/Services"><i class="zmdi zmdi-assignment-check"></i>Service</a></li>
 
                     <li><a href="/Projects/Index"><i class="zmdi zmdi-collection-text"></i>Project</a></li>
+
+                    <li><a href="/Category/Categories"><i class="zmdi zmdi-collection-text"></i>Project Category</a></li>
 
                     <li><a href="/Feedback/Index"><i class="zmdi zmdi-thumb-up"></i>Feedback</a></li>
 
@@ -88,7 +92,7 @@
 
             @RenderBody()
             <footer class="footer hidden-xs-down">
-                <p>&copy; @DateTime.Now.Year <a href="http://byteheart.com/" target="_blank">Trade World</a>. Trademarks and brands are the property of their respective owners.</p>
+                <p>&copy; @DateTime.Now.Year <a href="http://tradeworldad.com/" target="_blank">Trade World</a>. Trademarks and brands are the property of their respective owners.</p>
                 <p>Made with <span style="color: red">❤️</span> By <a href="http://byteheart.com/" target="_blank">ByteHeart</a></p>
             </footer>
         </section>

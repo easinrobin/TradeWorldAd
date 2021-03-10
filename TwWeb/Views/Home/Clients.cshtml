@@ -1,6 +1,7 @@
 ﻿@model TW.Models.PublicViewModel
 @{
-    ViewBag.Title = "OurClients";
+    ViewBag.Title = "Clients";
+    var imgPath = "http://admin.tradeworldad.com/" + Model.ClientsBanner.ImageUrl;
 }
 
 <section id="inner-headline">
@@ -23,7 +24,7 @@
     <div class="container">
         <div class="row">
             <div class="span12">
-                <img src="/img/Ourvaluableclients2.png"/>
+                <img src="@imgPath"/>
             </div>
         </div>
     </div>

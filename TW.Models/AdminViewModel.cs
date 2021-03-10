@@ -9,6 +9,7 @@ namespace TW.Models
         public Banner Banner { get; set; }
         public AboutUs AboutUs { get; set; }
         public OurClient Clients { get; set; }
+        public OurClientsBanner ClientsBanner { get; set; }
         public List<OurClient> ClientList { get; set; }
         public CompanySetting CompanySetting { get; set; }
         public OurMachine Machines { get; set; }
@@ -22,6 +23,8 @@ namespace TW.Models
         public List<ProjectCategory> ProjectCategoryList { get; set; }
         public ProjectGallery ProjectGallery { get; set; }
         public List<ProjectGallery> ProjectGalleryList { get; set; }
+        public OwnerImage OwnerImage { get; set; }
+        public SliderBgImgUrl SliderBgImgUrl { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Image Required")]
         public IEnumerable<HttpPostedFileBase> Files { get; set; }

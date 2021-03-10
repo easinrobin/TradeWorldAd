@@ -1,4 +1,5 @@
-﻿@model TW.Models.AdminViewModel
+﻿@using TW.BusinessLayer
+@model TW.Models.AdminViewModel
 @{
     ViewBag.Title = "Index";
 }
@@ -11,6 +12,8 @@
     </div>
 </header>
 
+@Vereyon.Web.FlashMessageHtmlHelper.RenderFlashMessages(Html)
+
 <div class="card">
     <div class="card-body">
         <a href="~/Projects/Create" class="btn btn-light btn--icon-text" title="Create"><i class="zmdi zmdi-plus-circle-o zmdi-hc-fw"></i> Create New</a>
@@ -20,6 +23,7 @@
                 <thead style="color: #ffaa00">
                     <tr>
                         <th>Name</th>
+                        <th>Category</th>
                         <th>Location</th>
                         <th>Architect Name</th>
                         <th>Image</th>
@@ -29,8 +33,19 @@
                 <tbody>
                     @foreach (var item in Model.ProjectList)
                     {
+                        var projCategory = ProjectManager.GetProjectCategoryById(item.ProjectCategoryId);
+
                         <tr>
                             <td>@item.ProjectName</td>
+                            @if (projCategory != null)
+                            {
+                                <td>@Html.Raw(projCategory.Name)</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                           
                             <td>@item.ProjectLocation</td>
                             <td>@item.ArchitectName</td>
                             <td>

@@ -32,6 +32,10 @@ namespace TW.Models
         [Required(ErrorMessage = "Consultant Contractor required")]
         public string Consultant_Contractor { get; set; }
 
+        [Display(Name = "Short Details")]
+        [Required(ErrorMessage = "Short Details required")]
+        public string ShortDetails { get; set; }
+
         [Display(Name = "Created By")]
         public string CreatedBy { get; set; }
 
@@ -40,5 +44,7 @@ namespace TW.Models
 
         [Display(Name = "Is Active")]
         public bool IsActive { get; set; }
+
+        //public string ProjectCategoryName { get; set; }
     }
 }

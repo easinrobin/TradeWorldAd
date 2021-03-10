@@ -1,6 +1,6 @@
 ﻿@model TW.Models.PublicViewModel
 @{
-    ViewBag.Title = "Our Projects";
+    ViewBag.Title = "Projects";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -25,7 +25,7 @@
         <div class="row">
             @foreach (var cat in Model.ProjectCategories)
             {
-                var imagePath = "http://twadmin.thebyteheart.com/" + cat.ImageUrl;
+                var imagePath = "http://admin.tradeworldad.com/" + cat.ImageUrl;
                 <div class="span4 box-project">
                     <a href="/Home/Projectdetails/@cat.Id">
                         <div class="service-box project-box aligncenter flyIn">

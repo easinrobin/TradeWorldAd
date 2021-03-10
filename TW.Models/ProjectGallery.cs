@@ -15,6 +15,10 @@ namespace TW.Models
         [Required(ErrorMessage = "Image required")]
         public string ImageUrl { get; set; }
 
+        [Display(Name = "Image Details")]
+        public string ImageDetails { get; set; }
+
+
         [Display(Name = "Created By")]
         public string CreatedBy { get; set; }
 

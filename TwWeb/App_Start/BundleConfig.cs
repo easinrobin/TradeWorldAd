@@ -143,10 +143,6 @@ namespace TwWeb
 
             bundles.Add(new StyleBundle("~/Content/ThirdPartyCss/shortcodes").Include(
                 "~/Content/ThirdPartyCss/shortcodes.css"));
-
-
-
-
         }
     }
 }
